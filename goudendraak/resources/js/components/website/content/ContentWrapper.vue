@@ -1,9 +1,9 @@
 <template>
-    <table id="main_table" style="padding:5px;width:100%;border-collapse: collapse">
-        <tr style="height:7px;background-color:red">
+    <table class="main-table">
+        <tr class="tr-style-1">
             <td colspan="9"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
+        <tr class="tr-style-2">
             <td width="7px"></td>
             <td class="yellow-border-1"></td>
             <td class="yellow-border-2"></td>
@@ -14,7 +14,7 @@
             <td class="yellow-border-2"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
+        <tr class="tr-style-2">
             <td width="7px"></td>
             <td class="yellow-border-5"></td>
             <td class="yellow-border-6"></td>
@@ -25,7 +25,7 @@
             <td class="yellow-border-3"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
+        <tr class="tr-style-2">
             <td width="7px"></td>
             <td class="yellow-border-3"></td>
             <td class="yellow-border-6"></td>
@@ -36,7 +36,7 @@
             <td class="yellow-border-8"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:50px;background-color:red">
+        <tr class="tr-style-3">
             <td width="7px"></td>
             <td class="yellow-border-9"></td>
             <td width="25px"></td>
@@ -142,7 +142,7 @@
             <td class="yellow-border-9"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
+        <tr class="tr-style-2">
             <td width="7px"></td>
             <td class="yellow-border-2"></td>
             <td class="yellow-border-6"></td>
@@ -153,7 +153,7 @@
             <td class="yellow-border-10"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
+        <tr class="tr-style-2">
             <td width="7px"></td>
             <td class="yellow-border-1"></td>
             <td class="yellow-border-6"></td>
@@ -164,9 +164,8 @@
             <td class="yellow-border-2"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:25px;background-color:red">
-            <td width="7px">
-            </td>
+        <tr class="tr-style-2">
+            <td width="7px"></td>
             <td class="yellow-border-5"></td>
             <td class="yellow-border-3"></td>
             <td class="yellow-border-11"></td>
@@ -176,7 +175,7 @@
             <td class="yellow-border-3"></td>
             <td width="7px"></td>
         </tr>
-        <tr style="height:7px;background-color:red">
+        <tr class="tr-style-1">
             <td colspan="9"></td>
         </tr>
     </table>
@@ -256,4 +255,26 @@ export default {
 .text-center {
     text-align: center;
 }
+
+.main-table {
+    padding: 5px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tr-style-1 {
+    height: 7px;
+    background-color: red;
+}
+
+.tr-style-2 {
+    height: 25px;
+    background-color: red;
+}
+
+.tr-style-3 {
+    height: 50px;
+    background-color: red;
+}
+
 </style>
