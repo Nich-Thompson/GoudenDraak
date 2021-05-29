@@ -42,6 +42,7 @@
             <td width="25px"></td>
             <td width="25px"></td>
             <td class="text-center">
+                <navigation></navigation>
                 <!-- CONTENT HERE! -->
                 <!--                <table width=100%>-->
                 <!--                    <tr>-->
@@ -182,8 +183,11 @@
 </template>
 
 <script>
+import Navigation from "../navigation/Navigation";
+
 export default {
-    name: "ContentWrapper"
+    name: "ContentWrapper",
+    components: {Navigation}
 }
 </script>
 
