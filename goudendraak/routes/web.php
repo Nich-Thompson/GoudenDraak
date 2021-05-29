@@ -27,8 +27,6 @@ Route::get('/kassa', function () {
     return view('welcome');
 });
 
-Route::get('/customer', function () {
-    return view('welcome');
+Route::prefix('/')->group(function () {
+    Route::resource('klant', \App\Http\Controllers\CustomerController::class);
 });
-
-

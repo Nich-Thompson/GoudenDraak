@@ -3,15 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Golden Dragon</title>
-    <link rel="stylesheet" href="website.css">
+    <title>Laravel</title>
 </head>
 <body>
 <div>
     <div id="app">
-        <h1>Welcome</h1>
+        <h1>INDEX KLANT</h1>
         <example-component></example-component>
-        <a href="{{ route('klant.index') }}">Klant index</a>
     </div>
 </div>
 <script src="./js/app.js"></script>
