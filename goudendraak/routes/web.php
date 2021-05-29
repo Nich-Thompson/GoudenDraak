@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//home pagina
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/kassa', function () {
+    return view('welcome');
+});
+
+Route::get('/customer', function () {
+    return view('welcome');
+});
+
+
