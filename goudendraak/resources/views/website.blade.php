@@ -6,7 +6,7 @@
     <title>The Golden Dragon</title>
 
     <link rel="stylesheet" href="/css/bootstrap-grid.css">
-    {{--    <link rel="stylesheet" href="/css/website.css">--}}
+    <link rel="stylesheet" href="/css/website.css">
 </head>
 <body>
 <div>

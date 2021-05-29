@@ -2,7 +2,7 @@ require('./bootstrap');
 
 import {createApp} from 'vue';
 import ExampleComponent from './components/ExampleComponent.vue';
-import WebsiteHeader from "./components/website/WebsiteHeader";
+import WebsiteHeader from "./components/website/header/WebsiteHeader";
 
 createApp({
     components: {
