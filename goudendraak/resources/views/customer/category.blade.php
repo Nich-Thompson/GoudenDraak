@@ -1,5 +1,10 @@
 @extends('customer.layout')
 
 @section('content')
-    KLANT INDEX
+    <h1>{{ $category->name }}</h1>
+    @foreach($dishes as $dish)
+        <div>
+            {{ $dish->name }}
+        </div>
+    @endforeach
 @endsection
