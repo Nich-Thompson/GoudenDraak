@@ -7,7 +7,8 @@
                     class="navbar-brand navbar-block"
                     v-for="category in categories"
                     :key="category.id"
-                    href="{{ route('klant.index') }}">
+                    v-bind:href="'/categorie/' + category.id"
+                >
                     {{ category.name }}
                 </a>
             </div>

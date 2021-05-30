@@ -35196,8 +35196,8 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
           return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
             class: "navbar-brand navbar-block",
             key: category.id,
-            href: "{{ route('klant.index') }}"
-          }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(category.name), 1 /* TEXT */))
+            href: '/categorie/' + category.id
+          }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(category.name), 9 /* TEXT, PROPS */, ["href"]))
         }), 128 /* KEYED_FRAGMENT */))
       ]),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Order button"),

@@ -14,8 +14,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        return redirect(route('getCategory', 1));
+    }
+
+    public function category()
+    {
         $categories = Category::all();
-        return view('customer.index', [
+        return view('customer.category', [
             'categories' => $categories
         ]);
     }

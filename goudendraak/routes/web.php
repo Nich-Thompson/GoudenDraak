@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,6 @@ Route::get('/kassa', function () {
 });
 
 Route::prefix('/')->group(function () {
-    Route::resource('klant', \App\Http\Controllers\CustomerController::class);
+    Route::resource('klant', CustomerController::class);
+    Route::get('/categorie/{id}', [CustomerController::class, 'category'])->name('getCategory');
 });
