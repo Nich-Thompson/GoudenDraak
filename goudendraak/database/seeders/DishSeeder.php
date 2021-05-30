@@ -17,6 +17,24 @@ class DishSeeder extends Seeder
     {
         //
         Category::create(['name' => 'Soep']);
+        Category::create(['name' => 'Voorgerechten']);
+        Category::create(['name' => 'Bami & Nasi']);
+        Category::create(['name' => 'Combinatie']);
+        Category::create(['name' => 'Mihoen']);
+        Category::create(['name' => 'Chinese Bami']);
+        Category::create(['name' => 'Indisch']);
+        Category::create(['name' => 'Ei']);
+        Category::create(['name' => 'Groenten']);
+        Category::create(['name' => 'Vlees']);
+        Category::create(['name' => 'Kip']);
+        Category::create(['name' => 'Garnalen']);
+        Category::create(['name' => 'Ossenhaas']);
+        Category::create(['name' => 'Vis']);
+        Category::create(['name' => 'Peking Eend']);
+        Category::create(['name' => 'Tiepan Specialiteiten']);
+        Category::create(['name' => 'Vegetarisch']);
+        Category::create(['name' => 'Kindermenu\'s']);
+        Category::create(['name' => 'Rijsttafels']);
 
         // Template for dishes, leaving empty will result in whitespace instead of null in DB
 //        Dish::create([
