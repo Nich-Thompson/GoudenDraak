@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -13,8 +14,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
-        return view('customer.index');
+        $categories = Category::all();
+        return view('customer.index', [
+            'categories' => $categories
+        ]);
     }
 
     /**

@@ -3,62 +3,12 @@
         <div class="container-fluid">
             <!--Scrollable Navbar-->
             <div class="scrolling-wrapper flex-row flex-nowrap">
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Soep
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Voorgerechten
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Bami & Nasi
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Combinatie
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Mihoen
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Chinese Bami
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Indisch
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Ei
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Groenten
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Vlees
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Kip
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Garnalen
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Ossenhaas
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Vis
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Peking Eend
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Tiepan Specialiteiten
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Vegetarisch
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Kindermenu's
-                </a>
-                <a class="navbar-brand navbar-block" href="{{ route('klant.index') }}">
-                    Rijsttafels
+                <a
+                    class="navbar-brand navbar-block"
+                    v-for="category in categories"
+                    :key="category.id"
+                    href="{{ route('klant.index') }}">
+                    {{ category.name }}
                 </a>
             </div>
             <!--Order button-->
@@ -72,6 +22,12 @@
 <script>
 export default {
     name: "Navbar",
+    props: {
+        categories: {
+            type: Array,
+            required: true
+        }
+    }
 }
 </script>
 

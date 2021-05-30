@@ -12,7 +12,7 @@
 
 <body>
 <div id="app">
-    <navbar></navbar>
+    <navbar :categories="{{ $categories }}"></navbar>
     <main class="container mt-4">
         @yield('content')
     </main>
