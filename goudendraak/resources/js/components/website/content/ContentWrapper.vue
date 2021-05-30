@@ -42,7 +42,7 @@
             <td width="25px"></td>
             <td width="25px"></td>
             <td class="text-center">
-                <navigation></navigation>
+                <content-header></content-header>
                 <!-- CONTENT HERE! -->
                 <!--                <table width=100%>-->
                 <!--                    <tr>-->
@@ -136,7 +136,7 @@
                 <!--                    </tr>-->
                 <!--                </table>-->
                 <br>
-                <div class="text-center"><a href="paginas/contact_new.html">Naar Contact</a></div>
+                <div class="text-center"><a href="/contact">Naar Contact</a></div>
             </td>
             <td width="25px"></td>
             <td width="25px"></td>
@@ -184,10 +184,11 @@
 
 <script>
 import Navigation from "../navigation/Navigation";
+import ContentHeader from "./ContentHeader";
 
 export default {
     name: "ContentWrapper",
-    components: {Navigation}
+    components: {ContentHeader, Navigation}
 }
 </script>
 

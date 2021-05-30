@@ -1,9 +1,9 @@
 <template>
     <div class="row">
         <div class="col">
-            <button class="gradient-button">Menukaart</button>
-            <button class="gradient-button">Nieuws</button>
-            <button class="gradient-button">Contact</button>
+            <a href="/menu" class="gradient-button">Menukaart</a>
+            <a href="/nieuws" class="gradient-button">Nieuws</a>
+            <a href="/contact" class="gradient-button">Contact</a>
         </div>
     </div>
 </template>
@@ -23,6 +23,7 @@ export default {
     color: #FFF;
     cursor: pointer;
     display: inline-block;
-    background-image: linear-gradient(to top, #0482d6 0%, #7dcbff 51%, #7dcbff 100%)
+    border: 1px solid #000000;
+    background-image: linear-gradient(to top, #0a54ff 0%, #7dcbff 100%)
 }
 </style>

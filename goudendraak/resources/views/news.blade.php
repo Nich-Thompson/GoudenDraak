@@ -8,7 +8,7 @@
 <body>
 <div>
     <div id="app">
-        <h1>Contact</h1>
+        <h1>d</h1>
         <example-component></example-component>
     </div>
 </div>
