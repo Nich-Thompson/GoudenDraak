@@ -1,5 +1,5 @@
 <template>
-    <table class="main-table">
+    <table class="main-table d-none d-xl-table">
         <tr class="tr-style-1">
             <td colspan="9"></td>
         </tr>
@@ -89,6 +89,13 @@
             <td colspan="9"></td>
         </tr>
     </table>
+
+    <div class="container d-block d-xl-none color-red">
+        <content-header></content-header>
+        <slot></slot>
+        <br>
+        <div class="text-center"><a href="/contact">Naar Contact</a></div>
+    </div>
 </template>
 
 <script>
@@ -188,6 +195,10 @@ export default {
 
 .tr-style-3 {
     height: 50px;
+    background-color: red;
+}
+
+.color-red {
     background-color: red;
 }
 

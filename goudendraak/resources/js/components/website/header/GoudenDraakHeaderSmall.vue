@@ -1,5 +1,5 @@
 <template>
-    <div class="col">
+    <div class="col d-none d-lg-block">
         <img class="goudendraak-image" src="/img/dragon-small.png" alt="Golden Dragon">
         <span class="goudendraak-font">De Gouden Draak</span>
         <img class="goudendraak-image" src="/img/dragon-small-flipped.png" alt="Golden Dragon">

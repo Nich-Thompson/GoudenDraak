@@ -15,6 +15,7 @@ export default {
 .content {
     border: 1px solid black;
     background: floralwhite;
+    text-align: center;
 }
 
 </style>

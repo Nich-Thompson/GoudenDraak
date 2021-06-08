@@ -2,7 +2,7 @@
     <div id="website-header" class="container-fluid">
         <div class="row">
             <gouden-draak-header-small></gouden-draak-header-small>
-            <div class="cok-sm-12 col-md-5">
+            <div class="col-md-12 col-lg-5">
                 <marquee behavior="scroll" direction="left">
                     Welkom bij De Gouden Draak.
                 </marquee>

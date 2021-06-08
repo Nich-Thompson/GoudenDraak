@@ -1,8 +1,9 @@
 <template>
     <div>
         <div id="header" class="row">
-            <div class="col"><img src="/img/dragon-small.png" class="dragon-1" alt="Golden Dragon"></div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col d-none d-lg-block"><img src="/img/dragon-small.png" class="dragon-1" alt="Golden Dragon">
+            </div>
+            <div class="col-md-12 col-lg-6 text-center">
                 <span class="title-1">Chinees Indische Specialiteiten</span>
                 <br>
                 <span class="title-2">De Gouden Draak</span>
@@ -10,7 +11,8 @@
 
                 <navigation></navigation>
             </div>
-            <div class="col"><img src="/img/dragon-small-flipped.png" class="dragon-2" alt="Golden Dragon"></div>
+            <div class="col d-none d-lg-block"><img src="/img/dragon-small-flipped.png" class="dragon-2"
+                                                    alt="Golden Dragon"></div>
         </div>
     </div>
 

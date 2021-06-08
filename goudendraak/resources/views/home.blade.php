@@ -10,25 +10,25 @@
         <h3>
             Maak een keuze uit 3 van onderstaande keuzegerechten:<br><br>
             <div class="row">
-                <div class="col-5 text-md-right">
-                    <p>
+                <div class="col-sm-12 col-md-5 text-md-right">
+                    <p class="no-margin">
                         Koe Loe Yuk
                     </p>
-                    <p>
+                    <p class="no-margin">
                         Tjap Tjoy
                     </p>
-                    <p>
+                    <p class="no-margin">
                         Babi Pangang
                     </p>
                 </div>
-                <div class="col-5">
-                    <p>
+                <div class="col-sm-12 col-md-5">
+                    <p class="no-margin">
                         Foe Yong Hai
                     </p>
-                    <p>
+                    <p class="no-margin">
                         Garnalen met Gebakken Knoflook
                     </p>
-                    <p>
+                    <p class="no-margin">
                         Kipfilet in Zwarte Bonen saus
                     </p>
                 </div>

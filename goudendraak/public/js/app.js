@@ -16761,7 +16761,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.yellow-border-1[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n    border-top: 4px solid yellow;\n}\n.yellow-border-2[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-top: 4px solid yellow;\n}\n.yellow-border-3[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-4[data-v-1a54fd62] {\n    border-top: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-5[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-6[data-v-1a54fd62] {\n    width: 25px;\n    border: 4px solid yellow;\n}\n.yellow-border-7[data-v-1a54fd62] {\n    width: 25px;\n}\n.yellow-border-8[data-v-1a54fd62] {\n    width: 25px;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-9[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-left: 4px solid yellow;\n}\n.yellow-border-10[data-v-1a54fd62] {\n    width: 25px;\n    border-top: 4px solid yellow;\n}\n.yellow-border-11[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n}\n.yellow-border-12[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n}\n.text-center[data-v-1a54fd62] {\n    text-align: center;\n}\n.main-table[data-v-1a54fd62] {\n    padding: 5px;\n    width: 100%;\n    border-collapse: collapse;\n}\n.tr-style-1[data-v-1a54fd62] {\n    height: 7px;\n    background-color: red;\n}\n.tr-style-2[data-v-1a54fd62] {\n    height: 25px;\n    background-color: red;\n}\n.tr-style-3[data-v-1a54fd62] {\n    height: 50px;\n    background-color: red;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.yellow-border-1[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n    border-top: 4px solid yellow;\n}\n.yellow-border-2[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-top: 4px solid yellow;\n}\n.yellow-border-3[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-4[data-v-1a54fd62] {\n    border-top: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-5[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-6[data-v-1a54fd62] {\n    width: 25px;\n    border: 4px solid yellow;\n}\n.yellow-border-7[data-v-1a54fd62] {\n    width: 25px;\n}\n.yellow-border-8[data-v-1a54fd62] {\n    width: 25px;\n    border-bottom: 4px solid yellow;\n}\n.yellow-border-9[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n    border-left: 4px solid yellow;\n}\n.yellow-border-10[data-v-1a54fd62] {\n    width: 25px;\n    border-top: 4px solid yellow;\n}\n.yellow-border-11[data-v-1a54fd62] {\n    width: 25px;\n    border-right: 4px solid yellow;\n}\n.yellow-border-12[data-v-1a54fd62] {\n    width: 25px;\n    border-left: 4px solid yellow;\n}\n.text-center[data-v-1a54fd62] {\n    text-align: center;\n}\n.main-table[data-v-1a54fd62] {\n    padding: 5px;\n    width: 100%;\n    border-collapse: collapse;\n}\n.tr-style-1[data-v-1a54fd62] {\n    height: 7px;\n    background-color: red;\n}\n.tr-style-2[data-v-1a54fd62] {\n    height: 25px;\n    background-color: red;\n}\n.tr-style-3[data-v-1a54fd62] {\n    height: 50px;\n    background-color: red;\n}\n.color-red[data-v-1a54fd62] {\n    background-color: red;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16785,7 +16785,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.content[data-v-57de98d3] {\n    border: 1px solid black;\n    background: floralwhite;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.content[data-v-57de98d3] {\n    border: 1px solid black;\n    background: floralwhite;\n    text-align: center;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35081,19 +35081,19 @@ const _hoisted_1 = {
   id: "header",
   class: "row"
 }
-const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "col" }, [
+const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "col d-none d-lg-block" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     src: "/img/dragon-small.png",
     class: "dragon-1",
     alt: "Golden Dragon"
   })
 ], -1 /* HOISTED */)
-const _hoisted_3 = { class: "col-sm-12 col-md-6" }
+const _hoisted_3 = { class: "col-md-12 col-lg-6 text-center" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", { class: "title-1" }, "Chinees Indische Specialiteiten", -1 /* HOISTED */)
 const _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
 const _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", { class: "title-2" }, "De Gouden Draak", -1 /* HOISTED */)
 const _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
-const _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "col" }, [
+const _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "col d-none d-lg-block" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     src: "/img/dragon-small-flipped.png",
     class: "dragon-2",
@@ -35138,7 +35138,7 @@ __webpack_require__.r(__webpack_exports__);
 const _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-1a54fd62")
 
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-1a54fd62")
-const _hoisted_1 = { class: "main-table" }
+const _hoisted_1 = { class: "main-table d-none d-xl-table" }
 const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", { class: "tr-style-1" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", { colspan: "9" })
 ], -1 /* HOISTED */)
@@ -35225,37 +35225,50 @@ const _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode
 const _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", { class: "tr-style-1" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", { colspan: "9" })
 ], -1 /* HOISTED */)
+const _hoisted_22 = { class: "container d-block d-xl-none color-red" }
+const _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
+const _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-center" }, [
+  /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", { href: "/contact" }, "Naar Contact")
+], -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_content_header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("content-header")
 
-  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("table", _hoisted_1, [
-    _hoisted_2,
-    _hoisted_3,
-    _hoisted_4,
-    _hoisted_5,
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", _hoisted_6, [
-      _hoisted_7,
-      _hoisted_8,
-      _hoisted_9,
-      _hoisted_10,
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_11, [
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_content_header),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"),
-        _hoisted_12,
-        _hoisted_13
+  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("table", _hoisted_1, [
+      _hoisted_2,
+      _hoisted_3,
+      _hoisted_4,
+      _hoisted_5,
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", _hoisted_6, [
+        _hoisted_7,
+        _hoisted_8,
+        _hoisted_9,
+        _hoisted_10,
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_11, [
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_content_header),
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"),
+          _hoisted_12,
+          _hoisted_13
+        ]),
+        _hoisted_14,
+        _hoisted_15,
+        _hoisted_16,
+        _hoisted_17
       ]),
-      _hoisted_14,
-      _hoisted_15,
-      _hoisted_16,
-      _hoisted_17
+      _hoisted_18,
+      _hoisted_19,
+      _hoisted_20,
+      _hoisted_21
     ]),
-    _hoisted_18,
-    _hoisted_19,
-    _hoisted_20,
-    _hoisted_21
-  ]))
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_content_header),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"),
+      _hoisted_23,
+      _hoisted_24
+    ])
+  ], 64 /* STABLE_FRAGMENT */))
 })
 
 /***/ }),
@@ -35303,7 +35316,7 @@ __webpack_require__.r(__webpack_exports__);
 const _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-c3814f20")
 
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-c3814f20")
-const _hoisted_1 = { class: "col" }
+const _hoisted_1 = { class: "col d-none d-lg-block" }
 const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   class: "goudendraak-image",
   src: "/img/dragon-small.png",
@@ -35348,7 +35361,7 @@ const _hoisted_1 = {
   class: "container-fluid"
 }
 const _hoisted_2 = { class: "row" }
-const _hoisted_3 = { class: "cok-sm-12 col-md-5" }
+const _hoisted_3 = { class: "col-md-12 col-lg-5" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Welkom bij De Gouden Draak. ")
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
