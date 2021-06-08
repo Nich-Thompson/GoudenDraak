@@ -1,8 +1,8 @@
 <template>
     <div class="container p-1">
-        swag
         <button type="submit" class="float-right btn btn-primary text-light">Bestel</button>
-        <span class="m-1 display-6 ">{{ dish.name }}</span>
+        <span class="dish">{{ dish.number }}{{ dish.number_addition }}. {{ dish.name }} €{{ dish.price }}</span>
+        <span class="description">{{ dish.description}}</span>
     </div>
 </template>
 
@@ -18,5 +18,17 @@ export default {
 </script>
 
 <style scoped>
+    .dish {
+        font-size: 30px;
+        margin-left: 10px;
+    }
 
+    .btn {
+        font-size: 20px;
+    }
+
+    .description {
+        float: right;
+        font-size: 24px;
+    }
 </style>
