@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="row">
+        <div id="header" class="row">
             <div class="col"><img src="/img/dragon-small.png" class="dragon-1" alt="Golden Dragon"></div>
-            <div class="col-md-5">
+            <div class="col-sm-12 col-md-6">
                 <span class="title-1">Chinees Indische Specialiteiten</span>
                 <br>
                 <span class="title-2">De Gouden Draak</span>
@@ -47,4 +47,9 @@ export default {
     font-weight: bold;
     color: yellow;
 }
+
+#header {
+    margin-bottom: 2rem;
+}
+
 </style>
