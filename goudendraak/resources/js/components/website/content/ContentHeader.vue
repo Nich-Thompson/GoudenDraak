@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col"><img src="/img/dragon-small.png" class="dragon-1" alt="Golden Dragon"></div>
-            <div class="col">
+            <div class="col-md-5">
                 <span class="title-1">Chinees Indische Specialiteiten</span>
                 <br>
                 <span class="title-2">De Gouden Draak</span>

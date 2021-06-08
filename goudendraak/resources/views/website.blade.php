@@ -12,8 +12,9 @@
 <div>
     <div id="app">
         <website-header></website-header>
-        <content-wrapper></content-wrapper>
-        @yield('content')
+        <content-wrapper>
+            @yield('content')
+        </content-wrapper>
     </div>
 </div>
 <script src={{asset("../js/app.js")}} defer></script>
