@@ -23,4 +23,8 @@
         max-height: 70vh;
         overflow-y: scroll;
     }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 </style>
