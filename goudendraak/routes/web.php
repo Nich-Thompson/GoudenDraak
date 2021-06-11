@@ -31,4 +31,5 @@ Route::get('/kassa', function () {
 Route::prefix('/')->group(function () {
     Route::resource('klant', CustomerController::class);
     Route::get('/categorie/{id}', [CustomerController::class, 'category'])->name('getCategory');
+    Route::get('/bestel', [CustomerController::class, 'viewOrder'])->name('getOrder');
 });

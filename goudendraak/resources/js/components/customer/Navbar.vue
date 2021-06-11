@@ -13,7 +13,7 @@
                 </a>
             </div>
             <!--Order button-->
-            <a class="navbar-brand order-button" href="{{ route('klant.index') }}">
+            <a class="navbar-brand order-button" href="/bestel/">
                 Bestel
             </a>
         </div>

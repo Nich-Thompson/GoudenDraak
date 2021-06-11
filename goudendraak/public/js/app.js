@@ -16635,18 +16635,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addToOrder: function addToOrder(dish) {
       var order = sessionStorage['order'];
+      var totalOrder = [];
 
-      if (order === undefined) {
-        var totalOrder = [];
-        totalOrder.push(dish);
-        sessionStorage['order'] = JSON.stringify(totalOrder);
-      } else {
-        var _totalOrder = JSON.parse(sessionStorage['order']);
-
-        _totalOrder.push(dish);
-
-        sessionStorage['order'] = JSON.stringify(_totalOrder);
+      if (order !== undefined) {
+        totalOrder = JSON.parse(sessionStorage['order']);
       }
+
+      totalOrder.push(dish);
+      sessionStorage['order'] = JSON.stringify(totalOrder);
+      console.log(totalOrder.length);
     }
   }
 });
@@ -35578,7 +35575,7 @@ const _hoisted_2 = { class: "container-fluid" }
 const _hoisted_3 = { class: "scrolling-wrapper flex-row flex-nowrap" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   class: "navbar-brand order-button",
-  href: "{{ route('klant.index') }}"
+  href: "/bestel/"
 }, " Bestel ", -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 

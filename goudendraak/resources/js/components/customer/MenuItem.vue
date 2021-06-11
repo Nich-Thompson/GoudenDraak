@@ -17,16 +17,13 @@ export default {
     methods: {
         addToOrder: function (dish) {
             let order = sessionStorage['order']
-            if (order === undefined) {
-                let totalOrder = []
-                totalOrder.push(dish)
-                sessionStorage['order'] = JSON.stringify(totalOrder)
+            let totalOrder = []
+            if (order !== undefined) {
+                totalOrder = JSON.parse(sessionStorage['order'])
             }
-            else {
-                let totalOrder = JSON.parse(sessionStorage['order'])
-                totalOrder.push(dish)
-                sessionStorage['order'] = JSON.stringify(totalOrder)
-            }
+            totalOrder.push(dish)
+            sessionStorage['order'] = JSON.stringify(totalOrder)
+            console.log(totalOrder.length)
         }
     }
 }

@@ -30,6 +30,11 @@ class CustomerController extends Controller
         ]);
     }
 
+    public function viewOrder()
+    {
+        return redirect(route('getCategory', 1));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
