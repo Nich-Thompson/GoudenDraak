@@ -5,10 +5,4 @@
     <category-menu :items="{{ $dishes }}"></category-menu>
 @endsection
 
-<script>
-    import MenuItem from "../../js/components/customer/MenuItem";
-
-    export default {
-        components: {MenuItem}
-    }
-</script>
+{{--<script src={{ asset('../js/orderItem.js') }} defer></script>--}}
