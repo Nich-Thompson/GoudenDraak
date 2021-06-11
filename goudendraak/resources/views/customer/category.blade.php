@@ -2,11 +2,7 @@
 
 @section('content')
     <h1 class="display-3">{{ $category->name }}</h1><br>
-    <div class="menu-list">
-        @foreach($dishes as $dish)
-            <menu-item :dish="{{ $dish }}"></menu-item>
-        @endforeach
-    </div>
+    <category-menu :items="{{ $dishes }}"></category-menu>
 @endsection
 
 <script>
@@ -16,15 +12,3 @@
         components: {MenuItem}
     }
 </script>
-
-{{--TODO: Remove this--}}
-<style>
-    .menu-list {
-        max-height: 70vh;
-        overflow-y: scroll;
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
-</style>

@@ -6,6 +6,7 @@ import WebsiteHeader from "./components/website/header/WebsiteHeader";
 import ContentWrapper from "./components/website/content/ContentWrapper";
 import Navbar from "./components/customer/Navbar";
 import MenuItem from "./components/customer/MenuItem";
+import CategoryMenu from "./components/customer/CategoryMenu";
 
 createApp({
     components: {
@@ -14,5 +15,6 @@ createApp({
         ContentWrapper,
         Navbar,
         MenuItem,
+        CategoryMenu,
     }
 }).mount('#app');
