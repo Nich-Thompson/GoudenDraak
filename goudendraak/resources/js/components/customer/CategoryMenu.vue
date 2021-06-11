@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-list">
+    <div class="item-list">
         <div
             v-for="item in items"
         >
@@ -26,12 +26,4 @@ export default {
 </script>
 
 <style scoped>
-.menu-list {
-    max-height: 70vh;
-    overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
 </style>

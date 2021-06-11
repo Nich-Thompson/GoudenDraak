@@ -30,13 +30,6 @@ export default {
 </script>
 
 <style scoped>
-.dish {
-    font-size: 35px;
-    margin-left: 10px;
-    position: relative;
-    top: 6px;
-}
-
 .btn {
     font-size: 30px;
 }

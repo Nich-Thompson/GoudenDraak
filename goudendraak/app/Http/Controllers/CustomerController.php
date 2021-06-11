@@ -32,7 +32,10 @@ class CustomerController extends Controller
 
     public function viewOrder()
     {
-        return redirect(route('getCategory', 1));
+        $categories = Category::all();
+        return view('customer.order', [
+            'categories' => $categories,
+        ]);
     }
 
     /**

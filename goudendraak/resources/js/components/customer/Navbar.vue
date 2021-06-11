@@ -45,16 +45,4 @@ export default {
     border-radius: 10px;
     font-size: 30px;
 }
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-.order-button {
-    margin-left: 2rem;
-    background-color: #7dcbff;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    font-size: 30px;
-}
 </style>

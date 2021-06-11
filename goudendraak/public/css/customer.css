@@ -1,0 +1,35 @@
+
+.item-list {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.dish {
+    font-size: 35px;
+    margin-left: 10px;
+    position: relative;
+    top: 6px;
+}
+
+.price {
+    font-size: 35px;
+    float: right;
+    position: relative;
+    top: 6px;
+}
+
+.order-button {
+    margin-left: 2rem;
+    background-color: #7dcbff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.finalize-button {
+    float: right;
+}
