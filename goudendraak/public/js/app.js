@@ -16633,16 +16633,19 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    addToOrder: function addToOrder(dishId) {
+    addToOrder: function addToOrder(dish) {
       var order = sessionStorage['order'];
 
       if (order === undefined) {
-        console.log(1);
-        sessionStorage['order'] = 'swag';
+        var totalOrder = [];
+        totalOrder.push(dish);
+        sessionStorage['order'] = JSON.stringify(totalOrder);
       } else {
-        console.log(2);
-        console.log(order);
-        sessionStorage['order'] = undefined;
+        var _totalOrder = JSON.parse(sessionStorage['order']);
+
+        _totalOrder.push(dish);
+
+        sessionStorage['order'] = JSON.stringify(_totalOrder);
       }
     }
   }
@@ -35542,7 +35545,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
       type: "submit",
       class: "float-right btn btn-primary text-light",
-      onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish.id)))
+      onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
     }, "Bestel"),
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
       class: "dish",

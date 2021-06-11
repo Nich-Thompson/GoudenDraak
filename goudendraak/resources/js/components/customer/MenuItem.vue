@@ -1,6 +1,6 @@
 <template>
     <div class="container p-1">
-        <button type="submit" class="float-right btn btn-primary text-light" v-on:click="addToOrder(dish.id)">Bestel</button>
+        <button type="submit" class="float-right btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
         <span class="dish" v-bind:id="dish.id">{{ dish.number }}{{ dish.number_addition }}. {{ dish.name }} €{{ dish.price }}</span>
         <span class="description">{{ dish.description }}</span>
     </div>
@@ -15,16 +15,17 @@ export default {
         }
     },
     methods: {
-        addToOrder: function (dishId) {
+        addToOrder: function (dish) {
             let order = sessionStorage['order']
             if (order === undefined) {
-                console.log(1)
-                sessionStorage['order'] = 'swag'
+                let totalOrder = []
+                totalOrder.push(dish)
+                sessionStorage['order'] = JSON.stringify(totalOrder)
             }
             else {
-                console.log(2)
-                console.log(order)
-                sessionStorage['order'] = undefined
+                let totalOrder = JSON.parse(sessionStorage['order'])
+                totalOrder.push(dish)
+                sessionStorage['order'] = JSON.stringify(totalOrder)
             }
         }
     }
