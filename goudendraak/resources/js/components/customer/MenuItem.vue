@@ -19,12 +19,14 @@ export default {
 
 <style scoped>
 .dish {
-    font-size: 30px;
+    font-size: 35px;
     margin-left: 10px;
+    position: relative;
+    top: 6px;
 }
 
 .btn {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .description {
