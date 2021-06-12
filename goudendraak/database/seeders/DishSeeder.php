@@ -55,41 +55,38 @@ class DishSeeder extends Seeder
                 case 'VLEES GERECHTEN (met witte rijst)':
                     $category = 10;
                     break;
-                case 'VLEES GERECHTEN (met witte rijst)':
+                case 'KIP GERECHTEN (met witte rijst)':
                     $category = 11;
                     break;
-                case 'KIP GERECHTEN (met witte rijst)':
+                case 'GARNALEN GERECHTEN (met witte rijst)':
                     $category = 12;
                     break;
-                case 'GARNALEN GERECHTEN (met witte rijst)':
+                case 'OSSENHAAS GERECHTEN (met witte rijst)':
                     $category = 13;
                     break;
-                case 'OSSENHAAS GERECHTEN (met witte rijst)':
+                case 'VISSEN GERECHTEN (met witte rijst)':
                     $category = 14;
                     break;
-                case 'VISSEN GERECHTEN (met witte rijst)':
+                case 'PEKING EEND GERECHTEN (met witte rijst)':
                     $category = 15;
                     break;
-                case 'PEKING EEND GERECHTEN (met witte rijst)':
+                case 'TIEPAN SPECIALITEITEN (met witte rijst)':
                     $category = 16;
                     break;
-                case 'TIEPAN SPECIALITEITEN (met witte rijst)':
+                case 'VEGETARISCHE GERECHTEN (met witte rijst)':
                     $category = 17;
                     break;
-                case 'VEGETARISCHE GERECHTEN (met witte rijst)':
+                case 'KINDERMENUS':
                     $category = 18;
                     break;
-                case 'KINDERMENUS':
+                case 'RIJSTTAFELS':
                     $category = 19;
                     break;
-                case 'RIJSTTAFELS':
+                case 'BUFFET':
                     $category = 20;
                     break;
-                case 'BUFFET':
-                    $category = 21;
-                    break;
                 case 'DIVERSEN':
-                    $category = 22;
+                    $category = 21;
                     break;
             }
 

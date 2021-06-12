@@ -40,6 +40,7 @@ class CustomerController extends Controller
 
     public function placeOrder(Request $request)
     {
+        dd($request->order);
         $categories = Category::all();
         return view('customer.order', [
             'categories' => $categories,
