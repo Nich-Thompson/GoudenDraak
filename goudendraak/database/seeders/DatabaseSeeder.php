@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             DishSeeder::class,
+            ImportSQL::class,
+            OldSeeder::class,
         ]);
     }
 }
