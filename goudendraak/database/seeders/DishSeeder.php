@@ -16,8 +16,8 @@ class DishSeeder extends Seeder
     public function run()
     {
         $this->seedCategories();
-//        $this->seedSoup();
-//        $this->seedAppetizers();
+        $this->seedSoup();
+        $this->seedAppetizers();
         // Template for dishes, leaving empty will result in whitespace instead of null in DB
 //        Dish::create([
 //            'number' => '',
