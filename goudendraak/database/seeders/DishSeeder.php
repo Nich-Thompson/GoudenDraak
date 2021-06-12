@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Dish;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DishSeeder extends Seeder
 {
@@ -16,19 +17,98 @@ class DishSeeder extends Seeder
     public function run()
     {
         $this->seedCategories();
-//        $this->seedSoup();
-//        $this->seedAppetizers();
-        // Template for dishes, leaving empty will result in whitespace instead of null in DB
-//        Dish::create([
-//            'number' => '',
-//            'number_addition' => '',
-//            'name' => '',
-//            'description' => '',
-//            'price' => '',
-//            'category_id' => '',
-//            'spiciness' => '',
-//            'deliverable' => '',
-//        ]);
+
+        // Connect to production database
+        $live_database = DB::connection('mysql');
+
+        foreach ($live_database->table('menu')->get() as $dish) {
+            // Get the right category id
+            $category = 0;
+            switch ($dish->soortgerecht) {
+                case 'SOEP':
+                    $category = 1;
+                    break;
+                case 'VOORGERECHT':
+                    $category = 2;
+                    break;
+                case 'BAMI EN NASI GERECHTEN':
+                    $category = 3;
+                    break;
+                case 'COMBINATIE GERECHTEN (met witte rijst)':
+                    $category = 4;
+                    break;
+                case 'MIHOEN GERECHTEN':
+                    $category = 5;
+                    break;
+                case 'CHINESE BAMI GERECHTEN':
+                    $category = 6;
+                    break;
+                case 'INDISCHE GERECHTEN':
+                    $category = 7;
+                    break;
+                case 'EIERGERECHTEN (met witte rijst)':
+                    $category = 8;
+                    break;
+                case 'GROENTEN GERECHTEN (met witte rijst)':
+                    $category = 9;
+                    break;
+                case 'VLEES GERECHTEN (met witte rijst)':
+                    $category = 10;
+                    break;
+                case 'VLEES GERECHTEN (met witte rijst)':
+                    $category = 11;
+                    break;
+                case 'KIP GERECHTEN (met witte rijst)':
+                    $category = 12;
+                    break;
+                case 'GARNALEN GERECHTEN (met witte rijst)':
+                    $category = 13;
+                    break;
+                case 'OSSENHAAS GERECHTEN (met witte rijst)':
+                    $category = 14;
+                    break;
+                case 'VISSEN GERECHTEN (met witte rijst)':
+                    $category = 15;
+                    break;
+                case 'PEKING EEND GERECHTEN (met witte rijst)':
+                    $category = 16;
+                    break;
+                case 'TIEPAN SPECIALITEITEN (met witte rijst)':
+                    $category = 17;
+                    break;
+                case 'VEGETARISCHE GERECHTEN (met witte rijst)':
+                    $category = 18;
+                    break;
+                case 'KINDERMENUS':
+                    $category = 19;
+                    break;
+                case 'RIJSTTAFELS':
+                    $category = 20;
+                    break;
+                case 'BUFFET':
+                    $category = 21;
+                    break;
+                case 'DIVERSEN':
+                    $category = 22;
+                    break;
+            }
+
+            // Change '&eacute;' to 'é'
+            $name = $dish->naam;
+            $name = str_replace('&eacute;', 'é', $name);
+            $description = $dish->beschrijving;
+            $description = str_replace('&eacute;', 'é', $description);
+
+            Dish::create([
+                'number' => $dish->menunummer,
+                'number_addition' => $dish->menu_toevoeging,
+                'name' => $name,
+                'description' => $description,
+                'price' => $dish->price,
+                'category_id' => $category,
+                'deliverable' => '0',
+            ]);
+        }
     }
 
     public function seedCategories()
@@ -54,243 +134,5 @@ class DishSeeder extends Seeder
         Category::create(['name' => 'Rijsttafels']);
         Category::create(['name' => 'Buffets']);
         Category::create(['name' => 'Diversen']);
-    }
-
-    public function seedSoup()
-    {
-        Dish::create([
-            'number' => '1',
-            'name' => 'Soep Ling Fa',
-            'description' => 'Heerlijke soep met kipblokjes, champignon en asperges.',
-            'price' => '3.80',
-            'category_id' => '1',
-            'deliverable' => '0',
-        ]);
-        Dish::create([
-            'number' => '2',
-            'name' => 'Kippensoep',
-            'description' => 'Soep met kip en groenten.',
-            'price' => '2.90',
-            'category_id' => '1',
-            'deliverable' => '0',
-        ]);
-    }
-
-    public function seedAppetizers()
-    {
-        Dish::create([
-            'number' => '10',
-            'name' => 'Loempia Ling Fa',
-            'description' => 'Met atjar, ananas en pindasaus.',
-            'price' => '6.20',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '11',
-            'name' => 'Loempia Compleet',
-            'description' => 'Met gesmoord rundvlees en pikante saus.',
-            'price' => '6.20',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '12',
-            'name' => 'Loempia met kip',
-            'description' => '',
-            'price' => '3.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '13',
-            'name' => 'Loempia',
-            'description' => '',
-            'price' => '3.80',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '14',
-            'name' => 'Chinese mini loempia (4st.)',
-            'description' => '',
-            'price' => '4.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '14',
-            'number_addition' => 'A',
-            'name' => 'Vegetarische mini loempia (12st.)',
-            'description' => '',
-            'price' => '4.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '15',
-            'name' => 'Kroepoek',
-            'description' => '',
-            'price' => '2.50',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '15',
-            'number_addition' => 'A',
-            'name' => 'Casave Kroepoek',
-            'description' => '',
-            'price' => '2.70',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '16',
-            'name' => 'Pangsit Goreng (7st.)',
-            'description' => '',
-            'price' => '3.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '17',
-            'name' => 'Pisang Goreng (5st.)',
-            'description' => '',
-            'price' => '3.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '18',
-            'name' => 'Chinese Dim Sum',
-            'description' => 'Mini loempia, kerry ko, pangsit goreng en garnalenpasteitje.',
-            'price' => '5.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '19',
-            'name' => 'Saté Babi (4st.)',
-            'description' => '',
-            'price' => '5.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '20',
-            'name' => 'Saté Ajam (4st.)',
-            'description' => '',
-            'price' => '5.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '20',
-            'number_addition' => 'A',
-            'name' => 'Saté Garnalen (3st.)',
-            'description' => '',
-            'price' => '9.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '21',
-            'name' => 'Fong Mei Ha (4st.)',
-            'description' => 'Krokant gepaneerde garnalen.',
-            'price' => '8.10',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '22',
-            'name' => 'Patat',
-            'description' => '',
-            'price' => '2.30',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '23',
-            'name' => 'Tsa Siu Mai (4st.)',
-            'description' => 'Gebakken vleespasteitje.',
-            'price' => '3.50',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '24',
-            'name' => 'Atjar',
-            'description' => '',
-            'price' => '3.00',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '25',
-            'name' => 'Witte Rijst',
-            'description' => '',
-            'price' => '3.00',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '26',
-            'name' => 'Grote Pindasaus',
-            'description' => '',
-            'price' => '3.90',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '27',
-            'name' => 'Kleine pindasaus',
-            'description' => '',
-            'price' => '2.30',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '28',
-            'name' => 'Kippenpootje',
-            'description' => '',
-            'price' => '2.30',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '29',
-            'name' => 'Halve Kip',
-            'description' => '',
-            'price' => '6.00',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '29',
-            'number_addition' => 'H',
-            'name' => 'Kroket',
-            'description' => '',
-            'price' => '1.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '29',
-            'number_addition' => 'G',
-            'name' => 'Frikandel',
-            'description' => '',
-            'price' => '1.40',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
-        Dish::create([
-            'number' => '180',
-            'number_addition' => 'H',
-            'name' => 'Kleine Sambal',
-            'description' => '',
-            'price' => '2.50',
-            'category_id' => '2',
-            'deliverable' => '1',
-        ]);
     }
 }

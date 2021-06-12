@@ -1,6 +1,6 @@
 <template>
     <div class="container p-1">
-        <button type="submit" class="float-right btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
+        <button class="float-right btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
         <span class="dish" v-bind:id="dish.id">{{ dish.number }}{{ dish.number_addition }}. {{ dish.name }} €{{ dish.price }}</span>
         <span class="description">{{ dish.description }}</span>
     </div>

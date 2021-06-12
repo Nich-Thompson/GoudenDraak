@@ -38,6 +38,14 @@ class CustomerController extends Controller
         ]);
     }
 
+    public function placeOrder(Request $request)
+    {
+        $categories = Category::all();
+        return view('customer.order', [
+            'categories' => $categories,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
