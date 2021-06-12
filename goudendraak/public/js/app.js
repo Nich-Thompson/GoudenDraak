@@ -16643,7 +16643,6 @@ __webpack_require__.r(__webpack_exports__);
 
       totalOrder.push(dish);
       sessionStorage['order'] = JSON.stringify(totalOrder);
-      console.log(totalOrder.length);
     }
   }
 });

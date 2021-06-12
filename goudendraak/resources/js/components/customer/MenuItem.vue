@@ -23,7 +23,6 @@ export default {
             }
             totalOrder.push(dish)
             sessionStorage['order'] = JSON.stringify(totalOrder)
-            console.log(totalOrder.length)
         }
     }
 }
