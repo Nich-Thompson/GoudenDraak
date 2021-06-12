@@ -40,11 +40,14 @@ class CustomerController extends Controller
 
     public function placeOrder(Request $request)
     {
-        dd($request->order);
-        $categories = Category::all();
-        return view('customer.order', [
-            'categories' => $categories,
-        ]);
+        $order = json_decode($request->order);
+        foreach ($order as $dish) {
+            Dish::create(
+
+            );
+        }
+
+        return redirect(route('getCategory', 1));
     }
 
     /**
