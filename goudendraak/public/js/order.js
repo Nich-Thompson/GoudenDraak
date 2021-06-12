@@ -24,12 +24,7 @@ window.onload = function () {
         })
 
         // Add zeroes to totalPrice if necessary
-        let cents = totalPrice.toString().split('.')[1]
-        if (cents === undefined) {
-            totalPrice = totalPrice + '.00'
-        } else if (cents.length === 1) {
-            totalPrice = totalPrice + '0'
-        }
+        totalPrice = totalPrice.toFixed(2)
 
         let newDivider = document.createElement('hr')
 
@@ -46,7 +41,7 @@ window.onload = function () {
         // Add method to button to clear order
         let finalizeButton = document.getElementById('finalizeButton')
         finalizeButton.addEventListener('click', function () {
-            // sessionStorage.removeItem('order')
+            sessionStorage.removeItem('order')
         })
 
         let orderInput = document.getElementById('orderInput')

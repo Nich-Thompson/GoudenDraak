@@ -22,74 +22,6 @@ class DishSeeder extends Seeder
         $live_database = DB::connection('mysql');
 
         foreach ($live_database->table('menu')->get() as $dish) {
-            // Get the right category id
-            $category = 0;
-            switch ($dish->soortgerecht) {
-                case 'SOEP':
-                    $category = 1;
-                    break;
-                case 'VOORGERECHT':
-                    $category = 2;
-                    break;
-                case 'BAMI EN NASI GERECHTEN':
-                    $category = 3;
-                    break;
-                case 'COMBINATIE GERECHTEN (met witte rijst)':
-                    $category = 4;
-                    break;
-                case 'MIHOEN GERECHTEN':
-                    $category = 5;
-                    break;
-                case 'CHINESE BAMI GERECHTEN':
-                    $category = 6;
-                    break;
-                case 'INDISCHE GERECHTEN':
-                    $category = 7;
-                    break;
-                case 'EIERGERECHTEN (met witte rijst)':
-                    $category = 8;
-                    break;
-                case 'GROENTEN GERECHTEN (met witte rijst)':
-                    $category = 9;
-                    break;
-                case 'VLEES GERECHTEN (met witte rijst)':
-                    $category = 10;
-                    break;
-                case 'KIP GERECHTEN (met witte rijst)':
-                    $category = 11;
-                    break;
-                case 'GARNALEN GERECHTEN (met witte rijst)':
-                    $category = 12;
-                    break;
-                case 'OSSENHAAS GERECHTEN (met witte rijst)':
-                    $category = 13;
-                    break;
-                case 'VISSEN GERECHTEN (met witte rijst)':
-                    $category = 14;
-                    break;
-                case 'PEKING EEND GERECHTEN (met witte rijst)':
-                    $category = 15;
-                    break;
-                case 'TIEPAN SPECIALITEITEN (met witte rijst)':
-                    $category = 16;
-                    break;
-                case 'VEGETARISCHE GERECHTEN (met witte rijst)':
-                    $category = 17;
-                    break;
-                case 'KINDERMENUS':
-                    $category = 18;
-                    break;
-                case 'RIJSTTAFELS':
-                    $category = 19;
-                    break;
-                case 'BUFFET':
-                    $category = 20;
-                    break;
-                case 'DIVERSEN':
-                    $category = 21;
-                    break;
-            }
-
             // Change '&eacute;' to 'é'
             $name = $dish->naam;
             $name = str_replace('&eacute;', 'é', $name);
@@ -102,10 +34,80 @@ class DishSeeder extends Seeder
                 'name' => $name,
                 'description' => $description,
                 'price' => $dish->price,
-                'category_id' => $category,
+                'category_id' => $this->getCategoryId($dish->soortgerecht),
                 'deliverable' => '0',
             ]);
         }
+    }
+
+    public function getCategoryId($categoryName) {
+        $category = 0;
+        switch ($categoryName) {
+            case 'SOEP':
+                $category = 1;
+                break;
+            case 'VOORGERECHT':
+                $category = 2;
+                break;
+            case 'BAMI EN NASI GERECHTEN':
+                $category = 3;
+                break;
+            case 'COMBINATIE GERECHTEN (met witte rijst)':
+                $category = 4;
+                break;
+            case 'MIHOEN GERECHTEN':
+                $category = 5;
+                break;
+            case 'CHINESE BAMI GERECHTEN':
+                $category = 6;
+                break;
+            case 'INDISCHE GERECHTEN':
+                $category = 7;
+                break;
+            case 'EIERGERECHTEN (met witte rijst)':
+                $category = 8;
+                break;
+            case 'GROENTEN GERECHTEN (met witte rijst)':
+                $category = 9;
+                break;
+            case 'VLEES GERECHTEN (met witte rijst)':
+                $category = 10;
+                break;
+            case 'KIP GERECHTEN (met witte rijst)':
+                $category = 11;
+                break;
+            case 'GARNALEN GERECHTEN (met witte rijst)':
+                $category = 12;
+                break;
+            case 'OSSENHAAS GERECHTEN (met witte rijst)':
+                $category = 13;
+                break;
+            case 'VISSEN GERECHTEN (met witte rijst)':
+                $category = 14;
+                break;
+            case 'PEKING EEND GERECHTEN (met witte rijst)':
+                $category = 15;
+                break;
+            case 'TIEPAN SPECIALITEITEN (met witte rijst)':
+                $category = 16;
+                break;
+            case 'VEGETARISCHE GERECHTEN (met witte rijst)':
+                $category = 17;
+                break;
+            case 'KINDERMENUS':
+                $category = 18;
+                break;
+            case 'RIJSTTAFELS':
+                $category = 19;
+                break;
+            case 'BUFFET':
+                $category = 20;
+                break;
+            case 'DIVERSEN':
+                $category = 21;
+                break;
+        }
+        return $category;
     }
 
     public function seedCategories()
