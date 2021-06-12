@@ -1,8 +1,19 @@
 <template>
     <div class="container p-1">
-        <button class="float-right btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
-        <span class="dish" v-bind:id="dish.id">{{ dish.number }}{{ dish.number_addition }}. {{ dish.name }} €{{ dish.price }}</span>
-        <span class="description">{{ dish.description }}</span>
+        <div class="row mb-3">
+            <div class="dish-name" v-bind:id="dish.id">
+                {{ dish.number }}{{ dish.number_addition }}<span
+                v-if="!(dish.number===null && dish.number_addition===null)">.</span>
+                {{ dish.name }}
+            </div>
+            <div class="col">
+                <span class="description col-12">{{ dish.description }}</span>
+                <div class="col-12">
+                    <span class="dish-price">€ {{ dish.price }}</span>
+                    <button class="btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -33,10 +44,25 @@ export default {
     font-size: 30px;
 }
 
+.dish-name {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.dish-price {
+    font-size: 35px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 2rem
+}
+
 .description {
-    float: right;
-    font-size: 24px;
-    position: relative;
-    top: 20px;
+    font-size: 32px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.description:first-letter {
+    text-transform: capitalize
 }
 </style>

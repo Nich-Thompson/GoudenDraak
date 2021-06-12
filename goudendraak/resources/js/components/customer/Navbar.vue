@@ -14,7 +14,7 @@
             </div>
             <!--Order button-->
             <a class="navbar-brand order-button" href="/bestel/">
-                Bestel
+                Bestelling
             </a>
         </div>
     </nav>

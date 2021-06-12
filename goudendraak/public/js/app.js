@@ -16847,7 +16847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-d9d7bff0] {\n    font-size: 30px;\n}\n.description[data-v-d9d7bff0] {\n    float: right;\n    font-size: 24px;\n    position: relative;\n    top: 20px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-d9d7bff0] {\n    font-size: 30px;\n}\n.dish-name[data-v-d9d7bff0] {\n    font-size: 40px;\n    margin-bottom: 0.5rem;\n}\n.dish-price[data-v-d9d7bff0] {\n    font-size: 35px;\n    font-weight: bold;\n    vertical-align: middle;\n    margin-right: 2rem\n}\n.description[data-v-d9d7bff0] {\n    font-size: 32px;\n    display: block;\n    margin-bottom: 0.5rem;\n}\n.description[data-v-d9d7bff0]:first-letter {\n    text-transform: capitalize\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16871,7 +16871,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.scrolling-wrapper[data-v-c177e0f4] {\r\n    overflow-x: auto;\r\n    padding-bottom: 1rem;\r\n    padding-top: 1rem;\n}\n.navbar-block[data-v-c177e0f4] {\r\n    background-color: #cbd5e0;\r\n    padding: 1rem 1.5rem;\r\n    border-radius: 10px;\r\n    font-size: 30px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.scrolling-wrapper[data-v-c177e0f4] {\n    overflow-x: auto;\n    padding-bottom: 1rem;\n    padding-top: 1rem;\n}\n.navbar-block[data-v-c177e0f4] {\n    background-color: #cbd5e0;\n    padding: 1rem 1.5rem;\n    border-radius: 10px;\n    font-size: 30px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35533,20 +35533,38 @@ const _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("d
 
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-d9d7bff0")
 const _hoisted_1 = { class: "container p-1" }
-const _hoisted_2 = { class: "description" }
+const _hoisted_2 = { class: "row mb-3" }
+const _hoisted_3 = { key: 0 }
+const _hoisted_4 = { class: "col" }
+const _hoisted_5 = { class: "description col-12" }
+const _hoisted_6 = { class: "col-12" }
+const _hoisted_7 = { class: "dish-price" }
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
   return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-      class: "float-right btn btn-primary text-light",
-      onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
-    }, "Bestel"),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-      class: "dish",
-      id: $props.dish.id
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.number) + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.number_addition) + ". " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.name) + " €" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.price), 9 /* TEXT, PROPS */, ["id"]),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.description), 1 /* TEXT */)
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+        class: "dish-name",
+        id: $props.dish.id
+      }, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.number) + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.number_addition), 1 /* TEXT */),
+        (!($props.dish.number===null && $props.dish.number_addition===null))
+          ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_3, "."))
+          : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.name), 1 /* TEXT */)
+      ], 8 /* PROPS */, ["id"]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.description), 1 /* TEXT */),
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_7, "€ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.price), 1 /* TEXT */),
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+            class: "btn btn-primary text-light",
+            onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
+          }, "Bestel")
+        ])
+      ])
+    ])
   ]))
 })
 
@@ -35574,7 +35592,7 @@ const _hoisted_3 = { class: "scrolling-wrapper flex-row flex-nowrap" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   class: "navbar-brand order-button",
   href: "/bestel/"
-}, " Bestel ", -1 /* HOISTED */)
+}, " Bestelling ", -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
