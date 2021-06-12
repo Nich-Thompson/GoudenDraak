@@ -24,12 +24,7 @@ window.onload = function () {
         })
 
         // Add zeroes to totalPrice if necessary
-        let cents = totalPrice.toString().split('.')[1]
-        if (cents === undefined) {
-            totalPrice = totalPrice + '.00'
-        } else if (cents.length === 1) {
-            totalPrice = totalPrice + '0'
-        }
+        totalPrice = totalPrice.toFixed(2)
 
         let newDivider = document.createElement('hr')
 
