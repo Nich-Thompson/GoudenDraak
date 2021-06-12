@@ -46,7 +46,7 @@ window.onload = function () {
         // Add method to button to clear order
         let finalizeButton = document.getElementById('finalizeButton')
         finalizeButton.addEventListener('click', function () {
-            // sessionStorage.removeItem('order')
+            sessionStorage.removeItem('order')
         })
 
         let orderInput = document.getElementById('orderInput')

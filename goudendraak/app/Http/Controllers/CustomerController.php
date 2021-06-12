@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Dish;
+use App\Models\Sale;
+use App\Models\SaleDish;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -41,10 +43,14 @@ class CustomerController extends Controller
     public function placeOrder(Request $request)
     {
         $order = json_decode($request->order);
+        // create order
+        $sale = Sale::create([
+        ]);
         foreach ($order as $dish) {
-            Dish::create(
-
-            );
+            SaleDish::create([
+                'sales_id' => $sale->id,
+                'dishes_id' => $dish->id,
+            ]);
         }
 
         return redirect(route('getCategory', 1));
