@@ -91,14 +91,17 @@ class OldSeeder extends Seeder
                     break;
             }
 
-            // Change the description if conatins '&e'
-//            $oldDescription = $dish->
-            
+            // Change '&eacute;' to 'é'
+            $name = $dish->naam;
+            $name = str_replace('&eacute;', 'é', $name);
+            $description = $dish->beschrijving;
+            $description = str_replace('&eacute;', 'é', $description);
+
             Dish::create([
                 'number' => $dish->menunummer,
                 'number_addition' => $dish->menu_toevoeging,
-                'name' => $dish->naam,
-                'description' => $dish->beschrijving,
+                'name' => $name,
+                'description' => $description,
                 'price' => $dish->price,
                 'category_id' => $category,
                 'deliverable' => '0',
