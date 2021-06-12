@@ -10,7 +10,7 @@
                 <span class="description col-12">{{ dish.description }}</span>
                 <div class="col-12">
                     <span class="dish-price">€ {{ dish.price }}</span>
-                    <button class="btn btn-primary text-light" v-on:click="addToOrder(dish)">Bestel</button>
+                    <button class="btn btn-primary text-light order-btn" v-on:click="addToOrder(dish)">Bestel</button>
                 </div>
             </div>
         </div>
@@ -65,4 +65,39 @@ export default {
 .description:first-letter {
     text-transform: capitalize
 }
+
+.order-btn {
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 3s; /* Safari */
+    transition-duration: 3s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.order-btn:after {
+    content: "";
+    background: #28A745;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 2s
+}
+
+.order-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
 </style>

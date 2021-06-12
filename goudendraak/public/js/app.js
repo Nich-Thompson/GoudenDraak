@@ -16847,7 +16847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-d9d7bff0] {\n    font-size: 30px;\n}\n.dish-name[data-v-d9d7bff0] {\n    font-size: 40px;\n    margin-bottom: 0.5rem;\n}\n.dish-price[data-v-d9d7bff0] {\n    font-size: 35px;\n    font-weight: bold;\n    vertical-align: middle;\n    margin-right: 2rem\n}\n.description[data-v-d9d7bff0] {\n    font-size: 32px;\n    display: block;\n    margin-bottom: 0.5rem;\n}\n.description[data-v-d9d7bff0]:first-letter {\n    text-transform: capitalize\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-d9d7bff0] {\n    font-size: 30px;\n}\n.dish-name[data-v-d9d7bff0] {\n    font-size: 40px;\n    margin-bottom: 0.5rem;\n}\n.dish-price[data-v-d9d7bff0] {\n    font-size: 35px;\n    font-weight: bold;\n    vertical-align: middle;\n    margin-right: 2rem\n}\n.description[data-v-d9d7bff0] {\n    font-size: 32px;\n    display: block;\n    margin-bottom: 0.5rem;\n}\n.description[data-v-d9d7bff0]:first-letter {\n    text-transform: capitalize\n}\n.order-btn[data-v-d9d7bff0] {\n    position: relative;\n    border: none;\n    border-radius: 15px;\n    padding: 20px;\n    width: 200px;\n    text-align: center; /* Safari */\n    transition-duration: 3s;\n    text-decoration: none;\n    overflow: hidden;\n    cursor: pointer;\n}\n.order-btn[data-v-d9d7bff0]:after {\n    content: \"\";\n    background: #28A745;\n    display: block;\n    position: absolute;\n    padding-top: 300%;\n    padding-left: 350%;\n    margin-left: -20px !important;\n    margin-top: -120%;\n    opacity: 0;\n    transition: all 2s\n}\n.order-btn[data-v-d9d7bff0]:active:after {\n    padding: 0;\n    margin: 0;\n    opacity: 1;\n    transition: 0s\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35559,7 +35559,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
         (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [
           (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_7, "€ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.dish.price), 1 /* TEXT */),
           (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-            class: "btn btn-primary text-light",
+            class: "btn btn-primary text-light order-btn",
             onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
           }, "Bestel")
         ])
