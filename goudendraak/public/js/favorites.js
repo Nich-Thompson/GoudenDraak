@@ -18,12 +18,13 @@ window.onload = function () {
 
             let newDescSpan = document.createElement('span')
             newDescSpan.className = 'description col-12'
-            newDescSpan.textContent = '€ ' + item.price
+            newDescSpan.textContent = item.description
             let newInnerCol = document.createElement('div')
             newInnerCol.className = 'col-12'
 
             let newPriceSpan = document.createElement('span')
             newPriceSpan.className = 'dish-price'
+            newPriceSpan.textContent = '€ ' + item.price
             let newOrderButton = document.createElement('button')
             newOrderButton.className = 'btn btn-primary text-light order-btn'
             newOrderButton.textContent = 'Bestel'
