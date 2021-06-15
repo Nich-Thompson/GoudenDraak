@@ -1,7 +1,7 @@
 window.onload = function () {
     let list = document.getElementById('itemList')
-    if (sessionStorage['favorites'] !== undefined && JSON.parse(sessionStorage['favorites']).length !== 0) {
-        let items = JSON.parse(sessionStorage['favorites'])
+    if (sessionStorage['order'] !== undefined) {
+        let items = JSON.parse(sessionStorage['order'])
         items.forEach(item => {
             let newContainer = document.createElement('div')
             newContainer.className = 'container p-1'
@@ -28,37 +28,12 @@ window.onload = function () {
             let newOrderButton = document.createElement('button')
             newOrderButton.className = 'btn btn-primary text-light order-btn'
             newOrderButton.textContent = 'Bestel'
-            let newFavButton = document.createElement('button')
-            newFavButton.classList = 'favorite-btn favorited'
-            newFavButton.addEventListener('click', function () {
-                newFavButton.classList.remove('favorited')
-                //remove from session
-                newContainer.parentNode.removeChild(newContainer)
-                let favorites = sessionStorage['favorites']
-                let totalFavorites = []
-                if (favorites !== undefined) {
-                    totalFavorites = JSON.parse(sessionStorage['favorites'])
-                }
-                let index = totalFavorites.map(function(e) { return e.id; }).indexOf(item.id);
-                totalFavorites.splice(index, 1)
-                sessionStorage['favorites'] = JSON.stringify(totalFavorites)
-            })
 
             list.append(newContainer)
             newContainer.append(newRow)
             newRow.append(newDishDiv, newCol)
             newCol.append(newDescSpan, newInnerCol)
-            newInnerCol.append(newPriceSpan, newOrderButton, newFavButton)
+            newInnerCol.append(newPriceSpan, newOrderButton)
         })
-    } else {
-        let newDiv = document.createElement('div')
-        newDiv.className = 'container p-1'
-
-        let newSpan = document.createElement('span')
-        newSpan.className = 'dish'
-        newSpan.textContent = 'U heeft nog niks op uw favorieten staan.'
-
-        list.append(newDiv)
-        newDiv.append(newSpan)
     }
 }

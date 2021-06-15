@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <span class="dish-price">€ {{ dish.price }}</span>
                     <button class="btn btn-primary text-light order-btn" v-on:click="addToOrder(dish)">Bestel</button>
-                    <button class="favorite-btn" v-bind:value="JSON.stringify(dish)"></button>
+                    <button class="favorite-btn"></button>
                 </div>
             </div>
         </div>
