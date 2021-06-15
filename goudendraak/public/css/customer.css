@@ -1,0 +1,119 @@
+
+.item-list {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.dish {
+    font-size: 35px;
+    margin-left: 10px;
+    position: relative;
+    top: 6px;
+}
+
+.price {
+    font-size: 35px;
+    float: right;
+    position: relative;
+    top: 6px;
+}
+
+.final-order-button {
+    margin-left: 2rem;
+    background-color: #7dcbff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.finalize-button {
+    float: right;
+}
+
+.dish-name {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.dish-price {
+    font-size: 35px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 2rem
+}
+
+.description {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.description:first-letter {
+    text-transform: capitalize
+}
+
+.order-btn {
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 3s; /* Safari */
+    transition-duration: 3s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.order-btn:after {
+    content: "";
+    background: #28A745;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 2s
+}
+
+.order-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.favorite-btn {
+    position: relative;
+    font-size: 32px;
+    cursor: pointer;
+    margin-left: 3rem;
+}
+
+.favorite-btn:before {
+    font-size: 3em;
+    content: '★';
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.favorite-btn:after {
+    font-size: 3em;
+    color: gold;
+    content: '★';
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s;
+}
+
+.favorite-btn.favorited:after {
+    transform: translate(-50%, -50%) scale(1.1);
+}

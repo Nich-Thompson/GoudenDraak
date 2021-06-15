@@ -21,10 +21,10 @@ class CreateDishes extends Migration
 
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->integer('number');
+            $table->integer('number')->nullable();
             $table->char('number_addition')->nullable();
             $table->string('name');
-            $table->string('description');
+            $table->text('description')->nullable();
             $table->decimal('price', '6', '2');
 
             $table->unsignedBigInteger('category_id');
