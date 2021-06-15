@@ -4,6 +4,12 @@
             <!--Scrollable Navbar-->
             <div class="scrolling-wrapper flex-row flex-nowrap">
                 <a
+                    class="navbar-brand navbar-block favorite"
+                    v-bind:href="'/categorie/favoriet'"
+                >
+                    Favorieten
+                </a>
+                <a
                     class="navbar-brand navbar-block"
                     v-for="category in categories"
                     :key="category.id"
@@ -13,7 +19,7 @@
                 </a>
             </div>
             <!--Order button-->
-            <a class="navbar-brand order-button" href="/bestel/">
+            <a class="navbar-brand final-order-button" href="/bestel/">
                 Bestelling
             </a>
         </div>
@@ -44,5 +50,9 @@ export default {
     padding: 1rem 1.5rem;
     border-radius: 10px;
     font-size: 30px;
+}
+
+.favorite {
+    background-color: #f5e7a4; /*#ffefa1*/
 }
 </style>
