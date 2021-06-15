@@ -43,16 +43,18 @@ class CustomerController extends Controller
     public function placeOrder(Request $request)
     {
         $order = json_decode($request->order);
-        // create order
-        $sale = Sale::create([
-        ]);
-        foreach ($order as $dish) {
-            SaleDish::create([
-                'sales_id' => $sale->id,
-                'dishes_id' => $dish->id,
+        if (count($order) > 0) {
+            // create order
+            $sale = Sale::create([
             ]);
+            foreach ($order as $dish) {
+                SaleDish::create([
+                    'sales_id' => $sale->id,
+                    'dishes_id' => $dish->id,
+                ]);
+            }
         }
-
+        
         return redirect(route('getCategory', 1));
     }
 

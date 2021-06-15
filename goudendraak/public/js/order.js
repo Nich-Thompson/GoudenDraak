@@ -19,8 +19,26 @@ window.onload = function () {
             newPriceSpan.textContent = '€ ' + item.price
             totalPrice += parseFloat(item.price.replace(',', '.'))
 
+            let deleteButton = document.createElement('button')
+            deleteButton.className = 'btn btn-danger'
+            deleteButton.textContent = 'X'
+            deleteButton.addEventListener('click', function () {
+                newDiv.parentNode.removeChild(newDiv)
+                let order = sessionStorage['order']
+                let totalOrder = []
+                if (order !== undefined) {
+                    totalOrder = JSON.parse(sessionStorage['order'])
+                }
+                let index = totalOrder.indexOf(item)
+                totalOrder.splice(index, 1)
+                sessionStorage['order'] = JSON.stringify(totalOrder)
+
+                setValue()
+                setTotalPrice()
+            })
+
             list.append(newDiv)
-            newDiv.append(newItemSpan, newPriceSpan)
+            newDiv.append(deleteButton, newItemSpan, newPriceSpan)
         })
 
         // Add zeroes to totalPrice if necessary
@@ -33,6 +51,7 @@ window.onload = function () {
         newPriceTextSpan.textContent = 'Totaalprijs:'
 
         let newTotalPriceSpan = document.createElement('span')
+        newTotalPriceSpan.id = 'totalPrice'
         newTotalPriceSpan.className = 'price'
         newTotalPriceSpan.textContent = '€ ' + totalPrice
 
@@ -44,9 +63,7 @@ window.onload = function () {
             sessionStorage.removeItem('order')
         })
 
-        let orderInput = document.getElementById('orderInput')
-        orderInput.setAttribute('value', sessionStorage['order'])
-        console.log(JSON.parse(sessionStorage['order']))
+        setValue()
     } else {
         let newDiv = document.createElement('div')
         newDiv.className = 'container p-1'
@@ -61,4 +78,24 @@ window.onload = function () {
         let finalizeButton = document.getElementById('finalizeButton')
         finalizeButton.hidden = true
     }
+}
+
+function setValue() {
+    // Set the value that is parsed to the controller
+    let orderInput = document.getElementById('orderInput')
+    orderInput.setAttribute('value', sessionStorage['order'])
+}
+
+function setTotalPrice() {
+    let totalPrice = 0
+    if (sessionStorage['order'] !== undefined) {
+        let items = JSON.parse(sessionStorage['order'])
+
+        items.forEach(item => {
+            totalPrice += parseFloat(item.price.replace(',', '.'))
+        })
+    }
+    totalPrice = totalPrice.toFixed(2)
+    let totalPriceSpan = document.getElementById('totalPrice')
+    totalPriceSpan.textContent = '€ ' + totalPrice
 }
