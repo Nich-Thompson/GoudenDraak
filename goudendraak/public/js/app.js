@@ -16847,7 +16847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-d9d7bff0] {\r\n    font-size: 30px;\n}\n.dish-name[data-v-d9d7bff0] {\r\n    font-size: 40px;\r\n    margin-bottom: 0.5rem;\n}\n.dish-price[data-v-d9d7bff0] {\r\n    font-size: 35px;\r\n    font-weight: bold;\r\n    vertical-align: middle;\r\n    margin-right: 2rem\n}\n.description[data-v-d9d7bff0] {\r\n    font-size: 32px;\r\n    display: block;\r\n    margin-bottom: 0.5rem;\n}\n.description[data-v-d9d7bff0]:first-letter {\r\n    text-transform: capitalize\n}\n.order-btn[data-v-d9d7bff0] {\r\n    position: relative;\r\n    border: none;\r\n    border-radius: 15px;\r\n    padding: 20px;\r\n    width: 200px;\r\n    text-align: center; /* Safari */\r\n    transition-duration: 3s;\r\n    text-decoration: none;\r\n    overflow: hidden;\r\n    cursor: pointer;\n}\n.order-btn[data-v-d9d7bff0]:after {\r\n    content: \"\";\r\n    background: #28A745;\r\n    display: block;\r\n    position: absolute;\r\n    padding-top: 300%;\r\n    padding-left: 350%;\r\n    margin-left: -20px !important;\r\n    margin-top: -120%;\r\n    opacity: 0;\r\n    transition: all 2s\n}\n.order-btn[data-v-d9d7bff0]:active:after {\r\n    padding: 0;\r\n    margin: 0;\r\n    opacity: 1;\r\n    transition: 0s\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16871,7 +16871,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.scrolling-wrapper[data-v-c177e0f4] {\n    overflow-x: auto;\n    padding-bottom: 1rem;\n    padding-top: 1rem;\n}\n.navbar-block[data-v-c177e0f4] {\n    background-color: #cbd5e0;\n    padding: 1rem 1.5rem;\n    border-radius: 10px;\n    font-size: 30px;\n}\n.favorite[data-v-c177e0f4] {\n    background-color: #f5e7a4; /*#ffefa1*/\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.scrolling-wrapper[data-v-c177e0f4] {\r\n    overflow-x: auto;\r\n    padding-bottom: 1rem;\r\n    padding-top: 1rem;\n}\n.navbar-block[data-v-c177e0f4] {\r\n    background-color: #cbd5e0;\r\n    padding: 1rem 1.5rem;\r\n    border-radius: 10px;\r\n    font-size: 30px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35590,11 +35590,7 @@ const _hoisted_1 = { class: "navbar navbar-expand-md navbar-light bg-white shado
 const _hoisted_2 = { class: "container-fluid" }
 const _hoisted_3 = { class: "scrolling-wrapper flex-row flex-nowrap" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  class: "navbar-brand navbar-block favorite",
-  href: '/categorie/favoriet'
-}, " Favorieten ", -1 /* HOISTED */)
-const _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  class: "navbar-brand final-order-button",
+  class: "navbar-brand order-button",
   href: "/bestel/"
 }, " Bestelling ", -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
@@ -35604,7 +35600,6 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Scrollable Navbar"),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [
-        _hoisted_4,
         ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.categories, (category) => {
           return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
             class: "navbar-brand navbar-block",
@@ -35614,7 +35609,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
         }), 128 /* KEYED_FRAGMENT */))
       ]),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Order button"),
-      _hoisted_5
+      _hoisted_4
     ])
   ]))
 })

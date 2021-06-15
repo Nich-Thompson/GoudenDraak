@@ -40,4 +40,64 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+    font-size: 30px;
+}
+
+.dish-name {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.dish-price {
+    font-size: 35px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 2rem
+}
+
+.description {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.description:first-letter {
+    text-transform: capitalize
+}
+
+.order-btn {
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 3s; /* Safari */
+    transition-duration: 3s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.order-btn:after {
+    content: "";
+    background: #28A745;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 2s
+}
+
+.order-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
 </style>

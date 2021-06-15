@@ -9,7 +9,7 @@
         <form action="{{ route('postOrder') }}" method="post">
             @csrf
             <label for="orderInput"></label><input type="text" name="order" id="orderInput" value="" hidden> <!--Value is set in js-->
-            <button type="submit" class="btn finalize-button final-order-button" id="finalizeButton">
+            <button type="submit" class="btn finalize-button order-button" id="finalizeButton">
                 Bestellen
             </button>
         </form>
