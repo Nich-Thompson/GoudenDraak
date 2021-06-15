@@ -29,7 +29,7 @@ window.onload = function () {
                 if (order !== undefined) {
                     totalOrder = JSON.parse(sessionStorage['order'])
                 }
-                let index = totalOrder.indexOf(item)
+                let index = totalOrder.map(function(e) { return e.id; }).indexOf(item.id);
                 totalOrder.splice(index, 1)
                 sessionStorage['order'] = JSON.stringify(totalOrder)
 
