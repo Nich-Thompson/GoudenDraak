@@ -20,7 +20,13 @@ export default {
         Array.from(document.getElementsByClassName('favorite-btn')).forEach(
             function (e) {
                 e.addEventListener('click', function () {
-                    e.classList.toggle('favorited')
+                    e.classList.add('favorited')
+                    let items = []
+                    if (sessionStorage['favorites'] !== undefined) {
+                        items = JSON.parse(sessionStorage['favorites'])
+                    }
+                    items.push(JSON.parse(e.value))
+                    sessionStorage['favorites'] = JSON.stringify(items)
                 })
             }
         );

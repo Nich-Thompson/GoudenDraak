@@ -16607,7 +16607,15 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     Array.from(document.getElementsByClassName('favorite-btn')).forEach(function (e) {
       e.addEventListener('click', function () {
-        e.classList.toggle('favorited');
+        e.classList.add('favorited');
+        var items = [];
+
+        if (sessionStorage['favorites'] !== undefined) {
+          items = JSON.parse(sessionStorage['favorites']);
+        }
+
+        items.push(JSON.parse(e.value));
+        sessionStorage['favorites'] = JSON.stringify(items);
       });
     });
   },
@@ -35546,7 +35554,6 @@ const _hoisted_4 = { class: "col" }
 const _hoisted_5 = { class: "description col-12" }
 const _hoisted_6 = { class: "col-12" }
 const _hoisted_7 = { class: "dish-price" }
-const _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", { class: "favorite-btn" }, null, -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
@@ -35570,7 +35577,10 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
             class: "btn btn-primary text-light order-btn",
             onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
           }, "Bestel"),
-          _hoisted_8
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+            class: "favorite-btn",
+            value: JSON.stringify($props.dish)
+          }, null, 8 /* PROPS */, ["value"])
         ])
       ])
     ])
