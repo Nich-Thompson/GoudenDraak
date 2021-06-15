@@ -20,13 +20,15 @@ export default {
         Array.from(document.getElementsByClassName('favorite-btn')).forEach(
             function (e) {
                 e.addEventListener('click', function () {
-                    e.classList.add('favorited')
-                    let items = []
-                    if (sessionStorage['favorites'] !== undefined) {
-                        items = JSON.parse(sessionStorage['favorites'])
+                    if (!e.classList.contains('favorited')) {
+                        e.classList.add('favorited')
+                        let items = []
+                        if (sessionStorage['favorites'] !== undefined) {
+                            items = JSON.parse(sessionStorage['favorites'])
+                        }
+                        items.push(JSON.parse(e.value))
+                        sessionStorage['favorites'] = JSON.stringify(items)
                     }
-                    items.push(JSON.parse(e.value))
-                    sessionStorage['favorites'] = JSON.stringify(items)
                 })
             }
         );
