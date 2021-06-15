@@ -64,10 +64,15 @@ window.onload = function () {
     // Add method to button to clear order
     let finalizeButton = document.getElementById('finalizeButton')
     finalizeButton.addEventListener('click', function () {
+        sessionStorage['previousOrder'] = sessionStorage['order']
         sessionStorage.removeItem('order')
     })
 
     setValue()
+}
+
+function loadOrder() {
+    
 }
 
 function setValue() {
