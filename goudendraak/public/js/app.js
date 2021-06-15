@@ -16632,15 +16632,6 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
-  mounted: function mounted() {
-    Array.from(document.getElementsByClassName('favorite-btn')).forEach(function (e) {
-      e.addEventListener('click', function () {
-        e.classList.toggle('liked');
-        console.log(0);
-      });
-      console.log(1);
-    });
-  },
   methods: {
     addToOrder: function addToOrder(dish) {
       var order = sessionStorage['order'];
@@ -16856,7 +16847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.favorite-btn[data-v-d9d7bff0] {\n    display: inline-block;\n    position: relative;\n    font-size: 32px;\n    cursor: pointer;\n}\n.favorite-btn[data-v-d9d7bff0]:before {\n    font-size: 3em;\n    color: #000;\n    content: '★';\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n}\n.favorite-btn[data-v-d9d7bff0]:after {\n    font-size: 3em;\n    color: gold;\n    content: '★';\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%) scale(0);\n    transition: transform 0.2s;\n}\n.favorite-btn.liked[data-v-d9d7bff0]:after {\n    transform: translate(-50%, -50%) scale(1.1);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35548,7 +35539,6 @@ const _hoisted_4 = { class: "col" }
 const _hoisted_5 = { class: "description col-12" }
 const _hoisted_6 = { class: "col-12" }
 const _hoisted_7 = { class: "dish-price" }
-const _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", { class: "favorite-btn" }, null, -1 /* HOISTED */)
 ;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
 const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
@@ -35572,8 +35562,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
             class: "btn btn-primary text-light order-btn",
             onClick: _cache[1] || (_cache[1] = $event => ($options.addToOrder($props.dish)))
           }, "Bestel")
-        ]),
-        _hoisted_8
+        ])
       ])
     ])
   ]))
