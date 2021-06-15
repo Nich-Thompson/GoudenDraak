@@ -1,5 +1,35 @@
 window.onload = function () {
-    // Load items currently on order
+    let totalPrice = loadOrder()
+
+    let list = document.getElementById('itemList')
+
+    // Add zeroes to totalPrice if necessary
+    totalPrice = totalPrice.toFixed(2)
+
+    let newDivider = document.createElement('hr')
+
+    let newPriceTextSpan = document.createElement('span')
+    newPriceTextSpan.className = 'dish'
+    newPriceTextSpan.textContent = 'Totaalprijs:'
+
+    let newTotalPriceSpan = document.createElement('span')
+    newTotalPriceSpan.id = 'totalPrice'
+    newTotalPriceSpan.className = 'price'
+    newTotalPriceSpan.textContent = '€ ' + totalPrice
+
+    list.append(newDivider, newPriceTextSpan, newTotalPriceSpan)
+
+    // Add method to button to clear order
+    let finalizeButton = document.getElementById('finalizeButton')
+    finalizeButton.addEventListener('click', function () {
+        sessionStorage['previousOrder'] = sessionStorage['order']
+        sessionStorage.removeItem('order')
+    })
+
+    setValue()
+}
+
+function loadOrder() {
     let list = document.getElementById('itemList')
     if (sessionStorage['order'] === undefined) {
         sessionStorage['order'] = JSON.stringify([])
@@ -45,34 +75,7 @@ window.onload = function () {
         newDiv.append(deleteButton, newItemSpan, newPriceSpan)
     })
 
-    // Add zeroes to totalPrice if necessary
-    totalPrice = totalPrice.toFixed(2)
-
-    let newDivider = document.createElement('hr')
-
-    let newPriceTextSpan = document.createElement('span')
-    newPriceTextSpan.className = 'dish'
-    newPriceTextSpan.textContent = 'Totaalprijs:'
-
-    let newTotalPriceSpan = document.createElement('span')
-    newTotalPriceSpan.id = 'totalPrice'
-    newTotalPriceSpan.className = 'price'
-    newTotalPriceSpan.textContent = '€ ' + totalPrice
-
-    list.append(newDivider, newPriceTextSpan, newTotalPriceSpan)
-
-    // Add method to button to clear order
-    let finalizeButton = document.getElementById('finalizeButton')
-    finalizeButton.addEventListener('click', function () {
-        sessionStorage['previousOrder'] = sessionStorage['order']
-        sessionStorage.removeItem('order')
-    })
-
-    setValue()
-}
-
-function loadOrder() {
-    
+    return totalPrice
 }
 
 function setValue() {
