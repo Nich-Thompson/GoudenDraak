@@ -90,30 +90,3 @@
     opacity: 1;
     transition: 0s
 }
-
-.favorite-btn {
-    position: relative;
-    font-size: 32px;
-    cursor: pointer;
-    margin-left: 3rem;
-}
-
-.favorite-btn:before {
-    font-size: 3em;
-    content: '★';
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-.favorite-btn:after {
-    font-size: 3em;
-    color: gold;
-    content: '★';
-    position: absolute;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.2s;
-}
-
-.favorite-btn.favorited:after {
-    transform: translate(-50%, -50%) scale(1.1);
-}

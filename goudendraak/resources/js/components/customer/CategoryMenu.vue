@@ -16,15 +16,6 @@ export default {
     components: {
         MenuItem
     },
-    mounted() {
-        Array.from(document.getElementsByClassName('favorite-btn')).forEach(
-            function (e) {
-                e.addEventListener('click', function () {
-                    e.classList.toggle('favorited')
-                })
-            }
-        );
-    },
     props: {
         items: {
             type: Array,
