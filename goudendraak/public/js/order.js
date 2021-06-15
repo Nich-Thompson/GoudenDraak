@@ -1,23 +1,12 @@
 window.onload = function () {
-    let totalPrice = loadOrder()
-
-    let list = document.getElementById('itemList')
-
-    // Add zeroes to totalPrice if necessary
-    totalPrice = totalPrice.toFixed(2)
-
-    let newDivider = document.createElement('hr')
-
-    let newPriceTextSpan = document.createElement('span')
-    newPriceTextSpan.className = 'dish'
-    newPriceTextSpan.textContent = 'Totaalprijs:'
-
-    let newTotalPriceSpan = document.createElement('span')
-    newTotalPriceSpan.id = 'totalPrice'
-    newTotalPriceSpan.className = 'price'
-    newTotalPriceSpan.textContent = '€ ' + totalPrice
-
-    list.append(newDivider, newPriceTextSpan, newTotalPriceSpan)
+    loadOrder()
+    
+    // Add method to button to repeat previous order
+    let copyButton = document.getElementById('copyButton')
+    copyButton.addEventListener('click', function () {
+        sessionStorage['order'] = sessionStorage['previousOrder']
+        loadOrder()
+    })
 
     // Add method to button to clear order
     let finalizeButton = document.getElementById('finalizeButton')
@@ -31,6 +20,7 @@ window.onload = function () {
 
 function loadOrder() {
     let list = document.getElementById('itemList')
+    list.innerHTML = ''
     if (sessionStorage['order'] === undefined) {
         sessionStorage['order'] = JSON.stringify([])
     }
@@ -75,7 +65,21 @@ function loadOrder() {
         newDiv.append(deleteButton, newItemSpan, newPriceSpan)
     })
 
-    return totalPrice
+    // Add zeroes to totalPrice if necessary
+    totalPrice = totalPrice.toFixed(2)
+
+    let newDivider = document.createElement('hr')
+
+    let newPriceTextSpan = document.createElement('span')
+    newPriceTextSpan.className = 'dish'
+    newPriceTextSpan.textContent = 'Totaalprijs:'
+
+    let newTotalPriceSpan = document.createElement('span')
+    newTotalPriceSpan.id = 'totalPrice'
+    newTotalPriceSpan.className = 'price'
+    newTotalPriceSpan.textContent = '€ ' + totalPrice
+
+    list.append(newDivider, newPriceTextSpan, newTotalPriceSpan)
 }
 
 function setValue() {
