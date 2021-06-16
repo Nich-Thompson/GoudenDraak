@@ -1,3 +1,5 @@
+import Cocktails from "./components/customer/Cocktails";
+
 require('./bootstrap');
 
 import {createApp} from 'vue';
@@ -16,5 +18,6 @@ createApp({
         Navbar,
         MenuItem,
         CategoryMenu,
+        Cocktails
     }
 }).mount('#app');

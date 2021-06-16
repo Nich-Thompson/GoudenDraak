@@ -40,6 +40,14 @@ class CustomerController extends Controller
         ]);
     }
 
+    public function cocktails()
+    {
+        $categories = Category::all();
+        return view('customer.cocktails', [
+            'categories' => $categories,
+        ]);
+    }
+
     public function placeOrder(Request $request)
     {
         $order = json_decode($request->order);
@@ -54,7 +62,14 @@ class CustomerController extends Controller
                 ]);
             }
         }
+    }
 
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    public function destroy($id){
         return redirect(route('getCategory', 1));
     }
 

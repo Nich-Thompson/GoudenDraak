@@ -29,6 +29,8 @@ Route::get('/kassa', function () {
 });
 
 Route::prefix('/')->group(function () {
+    Route::get('klant/cocktails', [CustomerController::class, 'cocktails'])->name('getCocktails');
+    Route::resource('klant', CustomerController::class);
     Route::get('klant', [CustomerController::class, 'index'])->name('getIndex');
     Route::get('/categorie/favoriet', [CustomerController::class, 'favorite'])->name('getFavorite');
     Route::get('/categorie/{id}', [CustomerController::class, 'category'])->name('getCategory');
