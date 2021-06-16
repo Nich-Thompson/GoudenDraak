@@ -39,3 +39,5 @@ Route::prefix('/')->group(function () {
 });
 
 Auth::routes();
+
+Route::get('/home', [RegisterController::class, 'index'])->name('home');
