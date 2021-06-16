@@ -63,6 +63,7 @@ class CustomerController extends Controller
                 ]);
             }
         }
+        return redirect(route('getIndex'));
     }
 
     public function update(Request $request, $id)
