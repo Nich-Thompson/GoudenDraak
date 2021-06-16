@@ -38,21 +38,21 @@ class CreateDishes extends Migration
         });
 
         Schema::create('allergies', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->string('name', 45)->primary();
             $table->timestamps();
         });
 
         Schema::create('dish_allergies', function (Blueprint $table) {
             $table->unsignedBigInteger('dish_id');
-            $table->unsignedBigInteger('allergy_id');
+            $table->string('allergy_name', 45);
 
             $table->foreign('dish_id')
                 ->references('id')
-                ->on('dishes')->onDelete("cascade");
-            $table->foreign('allergy_id')
-                ->references('id')
-                ->on('allergies')->onDelete("cascade");
+                ->on('dishes');
+
+            $table->foreign('allergy_name')
+                ->references('name')
+                ->on('allergies');
             $table->timestamps();
         });
     }

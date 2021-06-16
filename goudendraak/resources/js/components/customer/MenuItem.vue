@@ -10,6 +10,12 @@
                 </template>
             </div>
             <div class="col">
+                <span class="description col-12" v-if="dish.allergies.length > 0">
+                <strong>Allergieën: </strong>
+                    <template v-for="allergy in dish.allergies">
+                        {{ allergy.allergy_name }}&nbsp;
+                    </template>
+                </span>
                 <span class="description col-12">{{ dish.description }}</span>
                 <div class="col-12">
                     <span class="dish-price">€ {{ dish.price }}</span>
@@ -31,6 +37,7 @@ export default {
     },
     methods: {
         addToOrder: function (dish) {
+            console.log(dish);
             let order = sessionStorage['order']
             let totalOrder = []
             if (order !== undefined) {

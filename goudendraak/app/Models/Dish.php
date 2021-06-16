@@ -19,4 +19,9 @@ class Dish extends Model
         'spiciness',
         'deliverable',
     ];
+
+    public function allergies()
+    {
+        return $this->hasMany('App\Models\DishAllergy', 'dish_id', 'id');
+    }
 }
