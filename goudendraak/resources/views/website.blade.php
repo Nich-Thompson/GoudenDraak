@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="/css/website.css">
 </head>
 <body>
-<div>
-    <div id="app">
-        <website-header></website-header>
-        <content-wrapper></content-wrapper>
+<div id="app">
+    <website-header></website-header>
+    <content-wrapper>
         @yield('content')
-    </div>
+    </content-wrapper>
 </div>
 <script src={{asset("../js/app.js")}} defer></script>
 </body>

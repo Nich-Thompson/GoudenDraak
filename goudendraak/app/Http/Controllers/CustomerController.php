@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Dish;
+use App\Models\Sale;
+use App\Models\SaleDish;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -46,24 +48,20 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function create()
+    public function placeOrder(Request $request)
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
+        $order = json_decode($request->order);
+        if (count($order) > 0) {
+            // create order
+            $sale = Sale::create([
+            ]);
+            foreach ($order as $dish) {
+                SaleDish::create([
+                    'sales_id' => $sale->id,
+                    'dishes_id' => $dish->id,
+                ]);
+            }
+        }
     }
 
     public function update(Request $request, $id)
@@ -71,8 +69,15 @@ class CustomerController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy($id){
+        return redirect(route('getCategory', 1));
+    }
+
+    public function favorite()
     {
-        //
+        $categories = Category::all();
+        return view('customer.favorites', [
+            'categories' => $categories,
+        ]);
     }
 }
