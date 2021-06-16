@@ -40,9 +40,12 @@
                 @guest
 
                 @else
+                    <ul class="navbar-nav">
+                        <a class="nav-link" href="{{ route('login') }}">Bestellingen</a>
+                    </ul>
                     @if(Auth::user()->hasRole('admin'))
                         <ul class="navbar-nav">
-                            <a class="nav-link" href="{{ route('login') }}">ADMIN</a>
+                            <a class="nav-link" href="{{ route('login') }}">Medewerkers</a>
                         </ul>
                 @endif
             @endguest
@@ -55,16 +58,16 @@
 
                     @else
                         <li class="nav-item dropdown">
-                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                                {{ __('Log uit') }}
+                            </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      class="d-none">
-                                    @csrf
-                                </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                  class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     @endguest
                 </ul>
