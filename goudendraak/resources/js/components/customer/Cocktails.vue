@@ -8,9 +8,10 @@
     </div>
     <cocktail v-for="drink in results" :key="drink.idDrink" v-bind:drink="drink">
     </cocktail>
-    <p v-if="!results.length">Geen cocktails gevonden, wil je misschien een <a class="color-blue"
-                                                                               v-on:click="fetchRandomCocktail()">willekeurige
-        cocktail</a> bekijken?</p>
+    <p v-if="!results.length">Geen cocktails gevonden, wil je misschien een
+        <a class="color-blue link"
+           v-on:click="fetchRandomCocktail()">willekeurige
+            cocktail</a> bekijken?</p>
 </template>
 
 <script>
