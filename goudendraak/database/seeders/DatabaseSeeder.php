@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ImportSQL::class,
             DishSeeder::class,
+            AllergySeeder::class,
         ]);
     }
 }

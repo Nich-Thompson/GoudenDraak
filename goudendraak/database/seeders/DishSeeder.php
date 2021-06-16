@@ -35,12 +35,14 @@ class DishSeeder extends Seeder
                 'description' => $description,
                 'price' => $dish->price,
                 'category_id' => $this->getCategoryId($dish->soortgerecht),
+                'spiciness' => rand(0, 3),
                 'deliverable' => '0',
             ]);
         }
     }
 
-    public function getCategoryId($categoryName) {
+    public function getCategoryId($categoryName)
+    {
         $category = 0;
         switch ($categoryName) {
             case 'SOEP':
