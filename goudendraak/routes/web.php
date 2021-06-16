@@ -37,3 +37,7 @@ Route::prefix('/')->group(function () {
     Route::get('/bestel', [CustomerController::class, 'viewOrder'])->name('getOrder');
     Route::post('/bestel', [CustomerController::class, 'placeOrder'])->name('postOrder');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
