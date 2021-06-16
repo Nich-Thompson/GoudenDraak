@@ -5,6 +5,9 @@
                 {{ dish.number }}{{ dish.number_addition }}<span
                 v-if="!(dish.number===null && dish.number_addition===null)">.</span>
                 {{ dish.name }}
+                <template v-for="item in dish.spiciness">
+                    <img class="spicy" src="/img/chili.png"/>
+                </template>
             </div>
             <div class="col">
                 <span class="description col-12">{{ dish.description }}</span>
@@ -41,4 +44,8 @@ export default {
 </script>
 
 <style scoped>
+.spicy {
+    width: 2.5rem;
+    height: 2.5rem;
+}
 </style>

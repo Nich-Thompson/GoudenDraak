@@ -36,6 +36,25 @@ class CreateDishes extends Migration
             $table->boolean('deliverable');
             $table->timestamps();
         });
+
+        Schema::create('allergies', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+
+        Schema::create('dish_allergies', function (Blueprint $table) {
+            $table->unsignedBigInteger('dish_id');
+            $table->unsignedBigInteger('allergy_id');
+
+            $table->foreign('dish_id')
+                ->references('id')
+                ->on('dishes')->onDelete("cascade");
+            $table->foreign('allergy_id')
+                ->references('id')
+                ->on('allergies')->onDelete("cascade");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -47,5 +66,6 @@ class CreateDishes extends Migration
     {
         Schema::dropIfExists('categories');
         Schema::dropIfExists('dishes');
+        Schema::dropIfExists('allergies');
     }
 }
