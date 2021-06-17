@@ -44,10 +44,10 @@ class UserSeeder extends Seeder
 
         $admin->assignRole('admin');
         $employee->assignRole('kassamedewerker');
-        $employee2->assignRole('serveerster');
+        $employee2->assignRole('serveerder');
         $employee3->assignRole('kassamedewerker');
-        $employee4->assignRole('serveerster');
+        $employee4->assignRole('serveerder');
         $employee5->assignRole('kassamedewerker');
-        $employee5->assignRole('serveerster');
+        $employee5->assignRole('serveerder');
     }
 }

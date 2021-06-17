@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -61,8 +62,11 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
+        $employee = User::find($id);
+        $roles = Role::all();
         return view('employee.edit', [
-//            'employees' => $employees
+            'employee' => $employee,
+            'roles' => $roles,
         ]);
     }
 
@@ -75,7 +79,13 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee = User::find($id);
+
+        $employee->name =$request->input('name');
+        $employee->email =$request->input('email');
+        $employee->save();
+
+        return redirect(route('medewerkers.index'));
     }
 
     /**
