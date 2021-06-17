@@ -5,7 +5,15 @@
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="float-left h2">Bewerkpagina voor {{ $employee->name }}</h1>
+                    <h1 class="float-left h2">Bewerkpagina voor {{ $employee->name }}
+                        <form action="{{ route('medewerkers.destroy', $employee->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger float-right">
+                                Verwijderen
+                            </button>
+                        </form>
+                    </h1>
 
                     @if ($errors->any())
                         <div class="alert alert-danger" id="errors">
@@ -20,7 +28,7 @@
 
                     <form action="{{ route('medewerkers.update', $employee->id ) }}" method="POST">
                         @csrf
-                        @method('put')
+                        @method('PUT')
                         <input name="old_email" value="{{ $employee->email }}" hidden>
                         <div class="row">
                             <div class="col">

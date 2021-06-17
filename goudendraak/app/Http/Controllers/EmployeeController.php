@@ -94,6 +94,7 @@ class EmployeeController extends Controller
         }
 
         return redirect(route('medewerkers.index'));
+//        return redirect(route('medewerkers.edit', $id));
     }
 
     /**
@@ -104,6 +105,9 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = User::find($id);
+
+        $employee->delete();
+        return redirect(route('medewerkers.index'));
     }
 }

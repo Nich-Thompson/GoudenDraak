@@ -9,7 +9,8 @@
                     <div class="row m-2 p-3 rounded border border-light shadow-sm bg-white">
                         <div class="d-flex flex-column w-50">
                             <div class="h5 m-0 fw-bold">
-                                {{ $employee->name }} </div>
+                                {{ $employee->name }}
+                            </div>
                             <p>Rollen:
                                 <span hidden>{{ $i = 0 }}</span>
                                 @foreach(\App\Models\Role::query()->whereIn('id',
