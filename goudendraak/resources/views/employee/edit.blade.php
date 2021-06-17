@@ -37,9 +37,11 @@
                                 @foreach($roles as $role)
                                     <div>
                                         <input type="checkbox" name="{{ $role->name }}"
-                                        @if(in_array($role->name, ['serveerder', 'admin']))
-                                            checked
-                                        @endif
+                                               @if(in_array($role->name, \App\Models\Role::query()->whereIn('id',
+                                                    \App\Models\ModelHasRole::query()->where('model_id', '=', $employee->id)->pluck('role_id')
+                                                    )->pluck('name')->toArray()))
+                                               checked
+                                            @endif
                                         >
                                         <label>&nbsp; {{ ucfirst($role->name) }}</label>
                                     </div>
