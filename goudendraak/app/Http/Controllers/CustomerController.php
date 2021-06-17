@@ -52,6 +52,8 @@ class CustomerController extends Controller
     public function placeOrder(Request $request)
     {
         $order = json_decode($request->order);
+        $categories = Category::all();
+
         if (count($order) > 0) {
             // create order
             $sale = Sale::create([
@@ -63,14 +65,13 @@ class CustomerController extends Controller
                 ]);
             }
         }
+        return view("customer.order-success", [
+            'categories' => $categories,
+        ]);
     }
 
-    public function update(Request $request, $id)
+    public function destroy($id)
     {
-        //
-    }
-
-    public function destroy($id){
         return redirect(route('getCategory', 1));
     }
 

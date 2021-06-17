@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SalesRapport;
 use App\Models\Category;
 use App\Models\Dish;
+use App\Models\SaleDish;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -35,7 +38,5 @@ class HomeController extends Controller
 
         $pdf = PDF::loadView('download-menu', ["categories" => $categories]);
         return $pdf->stream('download-menu.pdf');
-
-//        return view('download-menu', ["categories" => $categories]);
     }
 }

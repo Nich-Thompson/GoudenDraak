@@ -5,7 +5,8 @@
         Bestelling geplaatst!
     </h1>
     <p>
-        Onze koks gaan meteen aan de slag met jouw bestelling. Kijk ondertussen even naar onze cocktails.
+        Onze koks gaan meteen aan de slag met jouw bestelling. Kijk ondertussen <a href="/klant/cocktails">hier</a> naar
+        onze cocktails.
     </p>
 @endsection
 
