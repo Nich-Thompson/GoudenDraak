@@ -1,7 +1,7 @@
 window.onload = function () {
     let list = document.getElementById('itemList')
-    if (sessionStorage['favorites'] !== undefined && JSON.parse(sessionStorage['favorites']).length !== 0) {
-        let items = JSON.parse(sessionStorage['favorites'])
+    if (localStorage['favorites'] !== undefined && JSON.parse(localStorage['favorites']).length !== 0) {
+        let items = JSON.parse(localStorage['favorites'])
         items.forEach(item => {
             let newContainer = document.createElement('div')
             newContainer.className = 'container p-1'
@@ -34,14 +34,14 @@ window.onload = function () {
                 newFavButton.classList.remove('favorited')
                 //remove from session
                 newContainer.parentNode.removeChild(newContainer)
-                let favorites = sessionStorage['favorites']
+                let favorites = localStorage['favorites']
                 let totalFavorites = []
                 if (favorites !== undefined) {
-                    totalFavorites = JSON.parse(sessionStorage['favorites'])
+                    totalFavorites = JSON.parse(localStorage['favorites'])
                 }
                 let index = totalFavorites.map(function(e) { return e.id; }).indexOf(item.id);
                 totalFavorites.splice(index, 1)
-                sessionStorage['favorites'] = JSON.stringify(totalFavorites)
+                localStorage['favorites'] = JSON.stringify(totalFavorites)
             })
 
             list.append(newContainer)

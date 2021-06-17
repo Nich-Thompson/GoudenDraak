@@ -23,11 +23,11 @@ export default {
                     if (!e.classList.contains('favorited')) {
                         e.classList.add('favorited')
                         let items = []
-                        if (sessionStorage['favorites'] !== undefined) {
-                            items = JSON.parse(sessionStorage['favorites'])
+                        if (localStorage['favorites'] !== undefined) {
+                            items = JSON.parse(localStorage['favorites'])
                         }
                         items.push(JSON.parse(e.value))
-                        sessionStorage['favorites'] = JSON.stringify(items)
+                        localStorage['favorites'] = JSON.stringify(items)
                     }
                 })
             }
