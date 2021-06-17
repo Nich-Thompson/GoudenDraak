@@ -5,15 +5,7 @@
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="float-left h2">Bewerkpagina voor {{ $employee->name }}
-                        <form action="{{ route('medewerkers.destroy', $employee->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger float-right">
-                                Verwijderen
-                            </button>
-                        </form>
-                    </h1>
+                    <h1 class="float-left h2">Medewerker toevoegen</h1>
 
                     @if ($errors->any())
                         <div class="alert alert-danger" id="errors">
@@ -26,9 +18,8 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('medewerkers.update', $employee->id ) }}" method="POST">
+                    <form action="{{ route('medewerkers.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
                         <div class="row">
                             <div class="col">
                                 <div class="form-group ml-3">
@@ -37,19 +28,19 @@
                                            class="form-control @error('first_name') is-invalid @enderror"
                                            @if(old('name') != null)
                                            value="{{ old('name') }}"
-                                           @else
-                                           value="{{ $employee->name }}"
+                                        @endif>
+                                </div>
+                                <div class="form-group ml-3">
+                                    <label class="ml-1">Wachtwoord</label>
+                                    <input type="password" name="password" placeholder="Vul wachtwoord in" required
+                                           class="form-control @error('password') is-invalid @enderror"
+                                           @if(old('password') != null)
+                                           value="{{ old('password') }}"
                                         @endif>
                                 </div>
                                 @foreach($roles as $role)
                                     <div>
-                                        <input type="checkbox" name="{{ $role->name }}"
-                                               @if(in_array($role->name, \App\Models\Role::query()->whereIn('id',
-                                                    \App\Models\ModelHasRole::query()->where('model_id', '=', $employee->id)->pluck('role_id')
-                                                    )->pluck('name')->toArray()))
-                                               checked
-                                            @endif
-                                        >
+                                        <input type="checkbox" name="{{ $role->name }}">
                                         <label>&nbsp; {{ ucfirst($role->name) }}</label>
                                     </div>
                                 @endforeach
@@ -61,8 +52,6 @@
                                            class="form-control @error('email') is-invalid @enderror"
                                            @if(old('email') != null)
                                            value="{{ old('email') }}"
-                                           @else
-                                           value="{{ $employee->email }}"
                                         @endif>
                                 </div>
                             </div>

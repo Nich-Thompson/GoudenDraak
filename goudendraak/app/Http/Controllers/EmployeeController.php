@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
@@ -29,7 +30,10 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+        return view('employee.create', [
+            'roles' => $roles,
+        ]);
     }
 
     /**
@@ -40,7 +44,20 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+        $roles = Role::all();
+        foreach ($roles as $role) {
+            if ($request->input($role->name)) {
+                $user->assignRole($role->name);
+            }
+        }
+
+        return redirect(route('medewerkers.index'));
     }
 
     /**
