@@ -36,7 +36,7 @@ class RegisterController extends Controller
 
     public function order($id)
     {
-        $dishes = SaleDish::query()->where('sales_id', '=', $id)->get();
+        $dishes = SaleDish::query()->where('sales_id', '=', $id)->get()->sortBy('dishes_id');
         return view('register.order', [
             'dishes' => $dishes,
             'saleId' => $id
