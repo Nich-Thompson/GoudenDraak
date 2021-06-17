@@ -12,8 +12,8 @@
             <div class="col">
                 <span class="description col-12" v-if="dish.allergies.length > 0">
                 <strong>Allergieën: </strong>
-                    <template v-for="allergy in dish.allergies">
-                        {{ allergy.allergy_name }}&nbsp;
+                    <template v-for="(allergy, key) in dish.allergies">
+                        {{ allergy.allergy_name }}<span v-if="key < dish.allergies.length-1">, </span>
                     </template>
                 </span>
                 <span class="description col-12">{{ dish.description }}</span>
