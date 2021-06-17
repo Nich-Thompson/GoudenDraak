@@ -37,7 +37,6 @@ export default {
     },
     methods: {
         addToOrder: function (dish) {
-            console.log(dish);
             let order = sessionStorage['order']
             let totalOrder = []
             if (order !== undefined) {

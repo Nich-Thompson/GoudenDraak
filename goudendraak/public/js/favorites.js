@@ -28,6 +28,15 @@ window.onload = function () {
             let newOrderButton = document.createElement('button')
             newOrderButton.className = 'btn btn-primary text-light order-btn'
             newOrderButton.textContent = 'Bestel'
+            newOrderButton.addEventListener('click', function () {
+                let order = sessionStorage['order']
+                let totalOrder = []
+                if (order !== undefined) {
+                    totalOrder = JSON.parse(sessionStorage['order'])
+                }
+                totalOrder.push(item)
+                sessionStorage['order'] = JSON.stringify(totalOrder)
+            })
             let newFavButton = document.createElement('button')
             newFavButton.classList = 'favorite-btn favorited'
             newFavButton.addEventListener('click', function () {
