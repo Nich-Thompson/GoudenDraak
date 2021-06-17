@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1>Bestellingen</h1>
+                <h1>Bestelling #{{ $saleId }}</h1>
                 @foreach($dishes as $dish)
                     <div class="row m-2 p-3 rounded border border-light shadow-sm bg-white">
                         <div class="d-flex flex-column w-50">
@@ -15,10 +15,13 @@
                                 <form action="{{ route('postComment', $dish->id) }}" method="POST">
                                     @csrf
                                     <input type="text" name="saleId" value="{{ $saleId }}" hidden>
-                                    <input type="text" name="comment" placeholder="Opmerking" class="form-control mb-2" value="{{ $dish->comment }}">
-                                    <button type="submit" id="{{ $dish->id }}" class="btn btn-primary">
-                                        Voeg opmerking toe.
-                                    </button>
+                                    @if(Auth::user()->hasRole('kassamedewerker'))
+                                        <input type="text" name="comment" placeholder="Opmerking"
+                                               class="form-control mb-2" value="{{ $dish->comment }}">
+                                        <button type="submit" id="{{ $dish->id }}" class="btn btn-primary">
+                                            Voeg opmerking toe.
+                                        </button>
+                                    @endif
                                 </form>
                             </div>
                         </div>
