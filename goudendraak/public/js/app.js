@@ -16594,12 +16594,12 @@ __webpack_require__.r(__webpack_exports__);
           e.classList.add('favorited');
           var items = [];
 
-          if (sessionStorage['favorites'] !== undefined) {
-            items = JSON.parse(sessionStorage['favorites']);
+          if (localStorage['favorites'] !== undefined) {
+            items = JSON.parse(localStorage['favorites']);
           }
 
           items.push(JSON.parse(e.value));
-          sessionStorage['favorites'] = JSON.stringify(items);
+          localStorage['favorites'] = JSON.stringify(items);
         }
       });
     });
@@ -16725,7 +16725,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addToOrder: function addToOrder(dish) {
-      console.log(dish);
       var order = sessionStorage['order'];
       var totalOrder = [];
 
