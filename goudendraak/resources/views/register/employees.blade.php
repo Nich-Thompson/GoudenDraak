@@ -10,12 +10,24 @@
                         <div class="d-flex flex-column w-50">
                             <div class="h5 m-0 fw-bold">
                                 {{ $employee->name }} </div>
+                            <p>Rollen:
+                                <span hidden>{{ $i = 0 }}</span>
+                                @foreach(\App\Models\Role::query()->whereIn('id',
+                                    \App\Models\ModelHasRole::query()->where('model_id', '=', $employee->id)->pluck('role_id')
+                                )->get() as $role)
+                                    @if($i > 0)
+                                        -
+                                    @endif
+                                    {{ ucfirst($role->name) }}
+                                    <span hidden>{{ $i++ }}</span>
+                                @endforeach</p>
                         </div>
-{{--                        <div class="d-flex flex-column justify-content-end w-50 text-right pb-2">--}}
-{{--                            <a id="{{ $order->id }}" class="btn btn-primary" href="{{ route('getRegisterOrder', $order->id) }}">--}}
-{{--                                Ga naar bestelling--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
+                        <div class="d-flex flex-column justify-content-end w-50 text-right pb-2">
+                            <a id="{{ $employee->id }}" class="btn btn-primary"
+                               href="{{ route('getRegisterOrder', $employee->id) }}">
+                                Aanpassen
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>
