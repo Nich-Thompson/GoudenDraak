@@ -21,6 +21,7 @@ Route::prefix('/')->group(function () {
     Route::get('contact', [HomeController::class, 'contact'])->name('getContact');
     Route::get('/nieuws', [HomeController::class, 'news'])->name('getNews');
     Route::get('/menu', [HomeController::class, 'menu'])->name('getMenu');
+    Route::get('/menu/download', [HomeController::class, 'downloadMenu'])->name('getDownloadMenu');
 });
 
 

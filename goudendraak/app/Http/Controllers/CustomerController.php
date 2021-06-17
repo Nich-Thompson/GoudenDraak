@@ -24,7 +24,8 @@ class CustomerController extends Controller
     {
         $categories = Category::all();
         $category = Category::find($category_id);
-        $dishes = Dish::query()->where('category_id', '=', $category_id)->get();
+        $dishes = Dish::with("allergies")->where('category_id', '=', $category_id)->get();
+
         return view('customer.category', [
             'categories' => $categories,
             'category' => $category,

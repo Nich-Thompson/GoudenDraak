@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class DishAllergy extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        "dish_id",
+        "allergy_name",
     ];
 
-    public function dishes()
-    {
-        return $this->hasMany('App\Models\Dish', 'category_id', 'id');
-    }
 }

@@ -5,8 +5,17 @@
                 {{ dish.number }}{{ dish.number_addition }}<span
                 v-if="!(dish.number===null && dish.number_addition===null)">.</span>
                 {{ dish.name }}
+                <template v-for="item in dish.spiciness">
+                    <img class="spicy" src="/img/chili.png"/>
+                </template>
             </div>
             <div class="col">
+                <span class="description col-12" v-if="dish.allergies.length > 0">
+                <strong>Allergieën: </strong>
+                    <template v-for="(allergy, key) in dish.allergies">
+                        {{ allergy.allergy_name }}<span v-if="key < dish.allergies.length-1">, </span>
+                    </template>
+                </span>
                 <span class="description col-12">{{ dish.description }}</span>
                 <div class="col-12">
                     <span class="dish-price">€ {{ dish.price }}</span>
@@ -28,6 +37,7 @@ export default {
     },
     methods: {
         addToOrder: function (dish) {
+            console.log(dish);
             let order = sessionStorage['order']
             let totalOrder = []
             if (order !== undefined) {
@@ -41,4 +51,8 @@ export default {
 </script>
 
 <style scoped>
+.spicy {
+    width: 2.5rem;
+    height: 2.5rem;
+}
 </style>
