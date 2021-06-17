@@ -45,7 +45,7 @@
                     </ul>
                     @if(Auth::user()->hasRole('admin'))
                         <ul class="navbar-nav">
-                            <a class="nav-link" href="{{ route('getEmployees') }}">Medewerkers</a>
+                            <a class="nav-link" href="{{ route('medewerkers.index') }}">Medewerkers</a>
                         </ul>
                 @endif
             @endguest

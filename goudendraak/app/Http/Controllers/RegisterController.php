@@ -54,16 +54,4 @@ class RegisterController extends Controller
 
         return redirect(route('getRegisterOrder', $saleId));
     }
-
-    public function getEmployees()
-    {
-//        $cashRegisterIds = ModelHasRole::query()->where('role_id', '=', '2')->pluck('model_id');
-//        $cashRegisterEmployees = User::query()->whereIn('id', $cashRegisterIds)->get();
-        $employees = User::all()->sortBy('name');
-
-        return view('register.employees', [
-//            'cashRegisterEmployees' => $cashRegisterEmployees
-            'employees' => $employees
-        ]);
-    }
 }

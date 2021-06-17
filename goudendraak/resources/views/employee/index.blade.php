@@ -24,7 +24,7 @@
                         </div>
                         <div class="d-flex flex-column justify-content-end w-50 text-right pb-2">
                             <a id="{{ $employee->id }}" class="btn btn-primary"
-                               href="{{ route('getRegisterOrder', $employee->id) }}">
+                               href="{{ route('medewerkers.edit', $employee->id) }}">
                                 Aanpassen
                             </a>
                         </div>

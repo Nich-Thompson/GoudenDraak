@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,8 @@ Route::prefix('/kassa')->group(function () {
     Route::post('/bestelling-item/{id}', [RegisterController::class, 'addComment'])->name('postComment');
     Route::get('/{id}', [RegisterController::class, 'order'])->name('getRegisterOrder');
 });
+
+Route::resource('medewerkers', EmployeeController::class);
 
 Route::prefix('/')->group(function () {
     Route::get('klant/cocktails', [CustomerController::class, 'cocktails'])->name('getCocktails');
