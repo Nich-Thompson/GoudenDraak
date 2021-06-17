@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sale;
 use App\Models\SaleDish;
+use App\Models\User;
+use App\Models\ModelHasRole;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -50,5 +52,17 @@ class RegisterController extends Controller
         $dish->save();
 
         return redirect(route('getRegisterOrder', $saleId));
+    }
+
+    public function getEmployees()
+    {
+//        $cashRegisterIds = ModelHasRole::query()->where('role_id', '=', '2')->pluck('model_id');
+//        $cashRegisterEmployees = User::query()->whereIn('id', $cashRegisterIds)->get();
+        $employees = User::all()->sortBy('name');
+
+        return view('register.employees', [
+//            'cashRegisterEmployees' => $cashRegisterEmployees
+            'employees' => $employees
+        ]);
     }
 }
