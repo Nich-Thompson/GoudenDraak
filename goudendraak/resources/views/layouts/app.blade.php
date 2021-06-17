@@ -47,6 +47,9 @@
                         <ul class="navbar-nav">
                             <a class="nav-link" href="{{ route('medewerkers.index') }}">Medewerkers</a>
                         </ul>
+                        <ul class="navbar-nav">
+                            <a class="nav-link" href="{{ route('getSales') }}">Sales</a>
+                        </ul>
                 @endif
             @endguest
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 class CreateSales extends Migration
@@ -30,7 +31,8 @@ class CreateSales extends Migration
                 ->references('id')
                 ->on('dishes');
             $table->string('comment')->nullable();
-            $table->timestamps();
+            $table->date('created_at')->default(Carbon::now());
+            $table->date('updated_at')->default(Carbon::now());
         });
     }
 
