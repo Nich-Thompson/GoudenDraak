@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +27,14 @@ Route::prefix('/')->group(function () {
     Route::get('/menu/download', [HomeController::class, 'downloadMenu'])->name('getDownloadMenu');
 });
 
-
-Route::get('/kassa', function () {
-    return view('welcome');
+Route::prefix('/kassa')->group(function () {
+    Route::get('/', [RegisterController::class, 'index'])->name('getRegisterIndex');
+    Route::get('/medewerkers', [RegisterController::class, 'getEmployees'])->name('getEmployees');
+    Route::post('/bestelling-item/{id}', [RegisterController::class, 'addComment'])->name('postComment');
+    Route::get('/{id}', [RegisterController::class, 'order'])->name('getRegisterOrder');
 });
+
+Route::resource('medewerkers', EmployeeController::class);
 
 Route::prefix('/')->group(function () {
     Route::get('klant/cocktails', [CustomerController::class, 'cocktails'])->name('getCocktails');
@@ -43,7 +49,10 @@ Route::prefix('/')->group(function () {
     Route::get('/exportHtml', [HomeController::class, 'exportHtml'])->name('test2');
 });
 
+Auth::routes();
+
+Route::get('/home', [RegisterController::class, 'index'])->name('home');
+
 Route::prefix('/admin')->group(function () {
     Route::get('/sales', [AdminController::class, 'sales'])->name('getSales');
 });
-

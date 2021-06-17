@@ -68,6 +68,7 @@ class CustomerController extends Controller
         return view("customer.order-success", [
             'categories' => $categories,
         ]);
+
     }
 
     public function destroy($id)
