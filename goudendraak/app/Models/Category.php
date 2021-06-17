@@ -12,4 +12,9 @@ class Category extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function dishes()
+    {
+        return $this->hasMany('App\Models\Dish', 'category_id', 'id');
+    }
 }

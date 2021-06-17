@@ -24,4 +24,9 @@ class Dish extends Model
     {
         return $this->hasMany('App\Models\DishAllergy', 'dish_id', 'id');
     }
+
+    public function categories()
+    {
+        return $this->hasMany('App\Models\Category', 'id', 'category_id');
+    }
 }

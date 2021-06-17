@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-</head>
-<body>
-<div>
-    <div id="app">
-        <h1>Dit is mijn Laravel Blade file</h1>
-        <example-component></example-component>
-    </div>
-</div>
-<script src="./js/app.js"></script>
-</body>
-</html>
+@extends('website')
+
+@section("content")
+    <website-content>
+        <p>Download een PDF van het menu <a href="./download">hier</a>.</p>
+        <img :src="'/img/restaurant-menukaart-1-2.jpg'" class="menu-img"/>
+        <img :src="'/img/restaurant-menukaart-1.jpg'" class="menu-img"/>
+    </website-content>
+@endsection
