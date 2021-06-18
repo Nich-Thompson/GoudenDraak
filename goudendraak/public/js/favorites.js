@@ -1,7 +1,7 @@
 window.onload = function () {
     let list = document.getElementById('itemList')
-    if (localStorage['favorites'] !== undefined && JSON.parse(localStorage['favorites']).length !== 0) {
-        let items = JSON.parse(localStorage['favorites'])
+    if (getCookie('favorites') !== undefined && JSON.parse(getCookie('favorites')).length !== 0) {
+        let items = JSON.parse(getCookie('favorites'))
         items.forEach(item => {
             let newContainer = document.createElement('div')
             newContainer.className = 'container p-1'
@@ -43,14 +43,16 @@ window.onload = function () {
                 newFavButton.classList.remove('favorited')
                 //remove from session
                 newContainer.parentNode.removeChild(newContainer)
-                let favorites = localStorage['favorites']
+                let favorites = getCookie('favorites')
                 let totalFavorites = []
                 if (favorites !== undefined) {
-                    totalFavorites = JSON.parse(localStorage['favorites'])
+                    totalFavorites = JSON.parse(getCookie('favorites'))
                 }
-                let index = totalFavorites.map(function(e) { return e.id; }).indexOf(item.id);
+                let index = totalFavorites.map(function (e) {
+                    return e.id;
+                }).indexOf(item.id);
                 totalFavorites.splice(index, 1)
-                localStorage['favorites'] = JSON.stringify(totalFavorites)
+                createCookie('favorites', JSON.stringify(totalFavorites), 10)
             })
 
             list.append(newContainer)
@@ -70,4 +72,31 @@ window.onload = function () {
         list.append(newDiv)
         newDiv.append(newSpan)
     }
+}
+
+function createCookie(name, value, days) {
+    let expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        let c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            let c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
 }
