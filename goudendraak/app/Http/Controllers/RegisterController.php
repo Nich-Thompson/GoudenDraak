@@ -28,7 +28,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        $orders = Sale::all();
+        $orders = Sale::all()->sortByDesc('created_at');
         return view('register.orders', [
             'orders' => $orders,
         ]);
@@ -53,5 +53,12 @@ class RegisterController extends Controller
         $dish->save();
 
         return redirect(route('getRegisterOrder', $saleId));
+    }
+
+    public function dishes() {
+        $orders = Sale::all()->sortByDesc('created_at');
+        return view('register.orders', [
+            'orders' => $orders,
+        ]);
     }
 }
