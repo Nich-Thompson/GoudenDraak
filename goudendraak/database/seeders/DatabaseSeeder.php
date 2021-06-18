@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ImportSQL::class,
             DishSeeder::class,
             AllergySeeder::class,
+            OldSalesSeeder::class,
         ]);
     }
 }
