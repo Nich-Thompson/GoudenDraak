@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Dish;
 use App\Models\Role;
 use App\Models\Sale;
 use App\Models\SaleDish;
@@ -55,10 +57,26 @@ class RegisterController extends Controller
         return redirect(route('getRegisterOrder', $saleId));
     }
 
-    public function dishes() {
-        $orders = Sale::all()->sortByDesc('created_at');
-        return view('register.orders', [
-            'orders' => $orders,
+    public function dishes()
+    {
+        $dishes = Dish::all();
+        return view('register.dishes', [
+            'dishes' => $dishes,
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $dishNames = Dish::query()->where('name', 'LIKE', '%' . $request->searchTerm . '%')->get();
+        $dishNumbers = Dish::query()->where('number', 'LIKE', '%' . $request->searchTerm . '%')->get();
+        $dishCategories = Dish::query()->whereIn('category_id',
+            Category::query()->where('name', 'LIKE', '%' . $request->searchTerm . '%')->pluck('id'))->get();
+
+        $dishes = $dishNames->merge($dishNumbers);
+        $dishes = $dishes->merge($dishCategories);
+
+        return view('register.dishes', [
+            'dishes' => $dishes,
         ]);
     }
 }

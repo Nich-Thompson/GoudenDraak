@@ -30,6 +30,7 @@ Route::prefix('/kassa')->group(function () {
     Route::get('/', [RegisterController::class, 'index'])->name('getRegisterIndex');
     Route::get('/medewerkers', [RegisterController::class, 'getEmployees'])->name('getEmployees');
     Route::get('/gerechten', [RegisterController::class, 'dishes'])->name('getDishes');
+    Route::get('/gerechten/zoek', [RegisterController::class, 'search'])->name('getSearchDishes');
     Route::post('/bestelling-item/{id}', [RegisterController::class, 'addComment'])->name('postComment');
     Route::get('/{id}', [RegisterController::class, 'order'])->name('getRegisterOrder');
 });
