@@ -30,7 +30,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        $orders = Sale::all()->sortByDesc('created_at');
+        $orders = Sale::all()->sortByDesc('id');
         return view('register.orders', [
             'orders' => $orders,
         ]);
