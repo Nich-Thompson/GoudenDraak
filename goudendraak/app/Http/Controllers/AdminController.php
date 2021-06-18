@@ -5,16 +5,41 @@ namespace App\Http\Controllers;
 use App\Exports\SalesRapport;
 use App\Models\SaleDish;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
     public function sales()
     {
-        $dates = SaleDish::query()->distinct()->get(['created_at'])->sortByDesc('created_at');
+        $files = Storage::files('.');
+        $sheets = array();
+        foreach ($files as $key => $value) {
+            if ($value != ".gitignore") {
 
-        return view("admin.sales", ["dates" => $dates]);
-//        return Excel::download(new SalesRapport, 'sales.xlsx');
+                $value = str_replace("public/", "", $value);
+                array_push($sheets, $value);
+            }
+        }
+
+        return view("admin.sales", ["sheets" => $sheets]);
+    }
+
+    public function storeSales()
+    {
+        $date = date('Y-m-d');
+        $filename = "sales" . $date . ".xlsx";
+
+        return Excel::store(new SalesRapport($date), $filename)->put(public_path('storage/'));
+    }
+
+    public function getFile($filename)
+    {
+        $file = Storage::disk('sheets')->get($filename);
+
+        return (new Response($file, 200))
+            ->header('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     }
 }

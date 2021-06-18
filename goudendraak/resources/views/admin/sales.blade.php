@@ -2,8 +2,10 @@
 
 @section('content')
     <div class="container">
-        @foreach($dates as $date)
-            {{$date->created_at}}
+        <h1>Sales rapporten</h1>
+        @foreach($sheets as $sheet)
+            <p><a href="{{route('getSalesFile', $sheet)}}"
+                  title="Rapport downloaden">{{$sheet}}</a></p>
         @endforeach
     </div>
 @endsection

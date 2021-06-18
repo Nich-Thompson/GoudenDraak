@@ -41,8 +41,10 @@ Route::prefix('/')->group(function () {
 Auth::routes();
 
 Route::get('/home', [RegisterController::class, 'index'])->name('home');
+
 Route::group(['middleware' => ['role:admin']], function () {
     Route::prefix('/admin')->group(function () {
         Route::get('/sales', [AdminController::class, 'sales'])->name('getSales');
+        Route::get('/sales/{filename}', [AdminController::class, 'getFile'])->name('getSalesFile');
     });
 });
