@@ -22,6 +22,12 @@
     top: 6px;
 }
 
+.table-number {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
 .final-order-button {
     margin-left: 2rem;
     background-color: #7dcbff;

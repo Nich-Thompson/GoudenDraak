@@ -15,7 +15,7 @@ class CreateSales extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->integer('table')->nullable();
+            $table->integer('table');
             $table->timestamps();
         });
 

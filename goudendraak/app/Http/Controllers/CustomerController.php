@@ -70,6 +70,7 @@ class CustomerController extends Controller
         if (count($order) > 0) {
             // create order
             $sale = Sale::create([
+                'table' => $request->input('table')
             ]);
             foreach ($order as $dish) {
                 SaleDish::create([
