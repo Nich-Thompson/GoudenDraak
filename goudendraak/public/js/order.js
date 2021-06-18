@@ -1,11 +1,12 @@
 window.onload = function () {
     loadOrder()
-    
+
     // Add method to button to repeat previous order
     let copyButton = document.getElementById('copyButton')
     copyButton.addEventListener('click', function () {
         sessionStorage['order'] = sessionStorage['previousOrder']
         loadOrder()
+        setValue()
     })
 
     // Add method to button to clear order

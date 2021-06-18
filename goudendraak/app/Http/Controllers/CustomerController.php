@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Dish;
 use App\Models\Sale;
 use App\Models\SaleDish;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -67,6 +68,15 @@ class CustomerController extends Controller
     public function placeOrder(Request $request)
     {
         $order = json_decode($request->order);
+
+        $previousSale = Sale::query()->where([
+            ['table', '=', $request->input('table')],
+            ['created_at', '>', Carbon::now()->subMinutes(10)->toDateTimeString()]
+        ])->get();
+        if (count($previousSale) > 0) {
+            return redirect(route('getIndex', 'Je hebt minder dan 10 minuten geleden nog een bestelling geplaatst.'));
+        }
+
         if (count($order) > 0) {
             // create order
             $sale = Sale::create([
