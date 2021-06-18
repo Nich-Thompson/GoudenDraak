@@ -38,9 +38,9 @@ Route::prefix('/kassa')->group(function () {
 Route::resource('medewerkers', EmployeeController::class);
 
 Route::prefix('/')->group(function () {
+    Route::get('klant/{error?}', [CustomerController::class, 'index'])->name('getIndex');
     Route::get('klant/cocktails', [CustomerController::class, 'cocktails'])->name('getCocktails');
     Route::resource('klant', CustomerController::class);
-    Route::get('klant', [CustomerController::class, 'index'])->name('getIndex');
     Route::get('/categorie/favoriet', [CustomerController::class, 'favorite'])->name('getFavorite');
     Route::get('/categorie/{id}', [CustomerController::class, 'category'])->name('getCategory');
     Route::get('/bestel', [CustomerController::class, 'viewOrder'])->name('getOrder');

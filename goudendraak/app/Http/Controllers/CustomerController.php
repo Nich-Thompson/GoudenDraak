@@ -13,10 +13,23 @@ class CustomerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($error = null)
     {
+        if ($error) {
+            $categories = Category::all();
+            $category = Category::find(1);
+            $dishes = Dish::with("allergies")->where('category_id', '=', 1)->get();
+            $errorMessage = $error;
+
+            return view('customer.category', [
+                'categories' => $categories,
+                'category' => $category,
+                'dishes' => $dishes,
+                'errorMessage' => $errorMessage,
+            ]);
+        }
         return redirect(route('getCategory', 1));
     }
 
@@ -25,11 +38,13 @@ class CustomerController extends Controller
         $categories = Category::all();
         $category = Category::find($category_id);
         $dishes = Dish::with("allergies")->where('category_id', '=', $category_id)->get();
+        $errorMessage = '';
 
         return view('customer.category', [
             'categories' => $categories,
             'category' => $category,
             'dishes' => $dishes,
+            'errorMessage' => $errorMessage,
         ]);
     }
 
@@ -63,7 +78,10 @@ class CustomerController extends Controller
                 ]);
             }
         }
-        return redirect(route('getIndex'));
+        else {
+            return redirect(route('getIndex', 'Je bestelling was leeg.'));
+        }
+        return redirect(route('getIndex', ''));
     }
 
     public function update(Request $request, $id)
