@@ -47,6 +47,11 @@
                         <ul class="navbar-nav">
                             <a class="nav-link" href="{{ route('medewerkers.index') }}">Medewerkers</a>
                         </ul>
+                    @endif
+                    @if(Auth::user()->hasRole('kassamedewerker'))
+                        <ul class="navbar-nav">
+                            <a class="nav-link" href="{{ route('getDishes') }}">Gerechten</a>
+                        </ul>
                 @endif
             @endguest
 
