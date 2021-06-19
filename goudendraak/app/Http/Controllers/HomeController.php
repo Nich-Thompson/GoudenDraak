@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\SalesRapport;
 use App\Models\Category;
 use App\Models\Dish;
+use App\Models\News;
 use App\Models\SaleDish;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class HomeController extends Controller
 
     public function news()
     {
-        return view('news');
+        $news = News::all();
+        return view('news', ["news" => $news]);
     }
 
     public function menu()
