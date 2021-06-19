@@ -15,6 +15,7 @@ class News extends Migration
             $table->string('title', 50);
             $table->text('body');
             $table->date("date")->default(Carbon::today()->toDateString());
+            $table->timestamps();
         });
     }
 
