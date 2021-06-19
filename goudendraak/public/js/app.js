@@ -17643,7 +17643,7 @@ __webpack_require__.r(__webpack_exports__);
                   c_end = document.cookie.length;
                 }
 
-                return unescape(document.cookie.substring(c_start, c_end));
+                return decodeURI(document.cookie.substring(c_start, c_end));
               }
             }
 
@@ -17653,7 +17653,7 @@ __webpack_require__.r(__webpack_exports__);
           e.classList.add('favorited');
           var items = [];
 
-          if (getCookie('favorites') !== undefined) {
+          if (getCookie('favorites') !== '') {
             items = JSON.parse(getCookie('favorites'));
           }
 

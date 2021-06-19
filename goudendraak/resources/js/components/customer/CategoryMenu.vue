@@ -23,7 +23,7 @@ export default {
                     if (!e.classList.contains('favorited')) {
                         e.classList.add('favorited')
                         let items = []
-                        if (getCookie('favorites') !== undefined) {
+                        if (getCookie('favorites') !== '') {
                             items = JSON.parse(getCookie('favorites'))
                         }
                         items.push(JSON.parse(e.value))
@@ -50,7 +50,7 @@ export default {
                                     if (c_end == -1) {
                                         c_end = document.cookie.length;
                                     }
-                                    return unescape(document.cookie.substring(c_start, c_end));
+                                    return decodeURI(document.cookie.substring(c_start, c_end));
                                 }
                             }
                             return "";

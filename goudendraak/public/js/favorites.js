@@ -45,7 +45,7 @@ window.onload = function () {
                 newContainer.parentNode.removeChild(newContainer)
                 let favorites = getCookie('favorites')
                 let totalFavorites = []
-                if (favorites !== undefined) {
+                if (favorites !== '') {
                     totalFavorites = JSON.parse(getCookie('favorites'))
                 }
                 let index = totalFavorites.map(function (e) {
@@ -95,7 +95,7 @@ function getCookie(c_name) {
             if (c_end == -1) {
                 c_end = document.cookie.length;
             }
-            return unescape(document.cookie.substring(c_start, c_end));
+            return decodeURI(document.cookie.substring(c_start, c_end));
         }
     }
     return "";
