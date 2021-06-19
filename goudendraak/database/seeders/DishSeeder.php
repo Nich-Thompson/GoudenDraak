@@ -25,9 +25,10 @@ class DishSeeder extends Seeder
             // Change '&eacute;' to 'é'
             $name = $dish->naam;
             $name = str_replace('&eacute;', 'é', $name);
+            $name = str_replace('<br>', ' ', $name);
             $description = $dish->beschrijving;
             $description = str_replace('&eacute;', 'é', $description);
-            $description = str_replace('<br>;', ' ', $description);
+            $description = str_replace('<br>', ' ', $description);
 
             Dish::create([
                 'number' => $dish->menunummer,
