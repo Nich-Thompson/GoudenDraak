@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call('App\Http\Controllers\AdminController@storeSales')->dailyAt("23:59")->runInBackground();;
+        $schedule->call('App\Http\Controllers\AdminController@storeSales')->dailyAt("23:59")->runInBackground();
+        $schedule->call('App\Http\Controllers\AdminController@storeSales')->dailyAt("11:03")->runInBackground();
     }
 
     /**

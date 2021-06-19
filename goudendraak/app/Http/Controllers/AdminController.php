@@ -24,6 +24,8 @@ class AdminController extends Controller
             }
         }
 
+        $sheets = array_reverse($sheets, false);
+
         return view("admin.sales", ["sheets" => $sheets]);
     }
 
