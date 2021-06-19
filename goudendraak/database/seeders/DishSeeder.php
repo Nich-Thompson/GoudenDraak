@@ -27,6 +27,7 @@ class DishSeeder extends Seeder
             $name = str_replace('&eacute;', 'é', $name);
             $description = $dish->beschrijving;
             $description = str_replace('&eacute;', 'é', $description);
+            $description = str_replace('<br>;', ' ', $description);
 
             Dish::create([
                 'number' => $dish->menunummer,
