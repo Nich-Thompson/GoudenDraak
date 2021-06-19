@@ -47,13 +47,16 @@
                         <ul class="navbar-nav">
                             <a class="nav-link" href="{{ route('medewerkers.index') }}">Medewerkers</a>
                         </ul>
+                        <ul class="navbar-nav">
+                            <a class="nav-link" href="{{ route('getSales') }}">Sales</a>
+                        </ul>
                     @endif
                     @if(Auth::user()->hasRole('kassamedewerker'))
                         <ul class="navbar-nav">
                             <a class="nav-link" href="{{ route('getDishes') }}">Gerechten</a>
                         </ul>
-                @endif
-            @endguest
+                    @endif
+                @endguest
 
             <!-- Right Side Of Navbar -->
                 <ul></ul>

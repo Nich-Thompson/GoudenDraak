@@ -14,4 +14,14 @@ class SaleDish extends Model
         'dishes_id',
         'comment',
     ];
+
+    public function dishes()
+    {
+        return $this->hasMany('App\Models\Dish', 'id', 'dishes_id');
+    }
+
+    public function sales()
+    {
+        return $this->hasOne('App\Models\Sale', 'id', 'sales_id');
+    }
 }

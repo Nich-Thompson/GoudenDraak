@@ -10,27 +10,18 @@ use App\Models\SaleDish;
 use App\Models\User;
 use App\Models\ModelHasRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class RegisterController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        $orders = Sale::all()->sortByDesc('id');
+        $orders = Sale::whereDate('created_at', Carbon::today())->get()->sortByDesc("id");
         return view('register.orders', [
             'orders' => $orders,
         ]);
