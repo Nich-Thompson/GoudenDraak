@@ -73,9 +73,12 @@ class CustomerController extends Controller
             ['table', '=', $request->input('table')],
             ['created_at', '>', Carbon::now()->subMinutes(10)->toDateTimeString()]
         ])->get();
+
         if (count($previousSale) > 0) {
             return redirect(route('getIndex', 'Je hebt minder dan 10 minuten geleden nog een bestelling geplaatst.'));
         }
+
+        $categories = Category::all();
 
         if (count($order) > 0) {
             // create order
@@ -88,23 +91,23 @@ class CustomerController extends Controller
                     'dishes_id' => $dish->id,
                 ]);
             }
-        }
-        else {
+        } else {
             return redirect(route('getIndex', 'Je bestelling was leeg.'));
         }
-        return redirect(route('getIndex', ''));
+
+        return view("customer.order-success", [
+            'categories' => $categories,
+        ]);
     }
 
-    public function update(Request $request, $id)
+
+    public function destroy($id)
     {
-        //
-    }
-
-    public function destroy($id){
         return redirect(route('getCategory', 1));
     }
 
-    public function favorite()
+    public
+    function favorite()
     {
         $categories = Category::all();
         return view('customer.favorites', [
