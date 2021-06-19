@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             DishSeeder::class,
             AllergySeeder::class,
             OldSalesSeeder::class,
+            NewsSeeder::class,
         ]);
     }
 }
